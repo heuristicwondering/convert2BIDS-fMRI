@@ -1,0 +1,63 @@
+#Convert the raw .dcm files into BIDS-compatible .nii
+
+#1. In matlab, run dicm2nii converter
+cd SNAP/Projects/BIDs-Conversion/katie/Code/dicm2nii-master
+dicm2nii
+
+2. Select the participant's anonymized dicom files ~/SNAP/Data/BIDS/SNAP#/AnonDcm
+3. Select output directory: ~/SNAP/Data/BIDS/SNAP#/RawData
+
+4. Check presets:
+      Output format: BIDS
+    Ensure the following are checked:
+      Compress
+      Left-had storage
+      Store PatientName
+      #Use parfor if needed
+      Use SeriesInstanceUID if exists
+      Save json file
+
+5. Click “Start conversion”
+
+6. Check that the following fields are correct:
+  Subject: XXXXX (only five-digit participant #)
+  Session: Blank
+  AcquisitionDate: NaT
+  Comment: Blank
+
+SNAP1
+    Name					      Type		Modality (this will be the output file name)
+
+  MPRAGE    	                        anat	      T1w
+  AxialT2                                 anat        inplaneT2
+  Block_1_Resting_State_180_BR_           func        task-resting_run-01_bold
+  Block_2_Match_242_BR_                   func        task-emotion_run-01_bold       
+  Block_3_Star_106_BR_                    func        task-dotprobe_run-01_bold
+  Block_4_Catch_self_paced_varying..      func        task-cyberball_run-01_bold
+  Block_5_Driving                         func        task-driving_run-01_bold
+  Block_6_People_1                        func        task-mingroup1_run-01_bold
+  Block_7_People_2                        func        task-mingroup2_run-01_bold
+
+SNAP2
+    Name					      Type		Modality (this will be the output file name)
+
+  MPRAGE    	                        anat	      T1w
+  AxialT2                                 anat        inplaneT2
+  Block_1_Opinions                        func        task-feedback_run-01_bold     
+  Block_2_Reactions                       func        task-gonogo_run-01_bold       
+  Block_3_Cyberball                       func        task-cyberball_run-01_bold
+  Block_4_Star                            func        task-dotprobe_run-01_bold
+  
+SNAP3
+    Name					      Type		Modality (this will be the output file name)
+
+  MPRAGE    	                        anat	      T1w
+  AxialT2                                 anat        inplaneT2
+  BOLD_Opinion                            func        task-feedback_run-01_bold
+  BOLD_Reaction                           func        task-gonogo_run-01_bold
+  BOLD_Catch                              func        task-cyberball_run-01_bold     
+  BOLD_Dot                                func        task-dotprobe_run-01_bold       
+
+*If there are two runs of the same task, check the scan notes to see if the task was repeated. If so change "run-01" to "run-02" for the second run of the task.
+
+7. Hit "ok" and let it run.
