@@ -4,8 +4,8 @@
 ## 3. Click on 'File' and then Open, navigate to your DICOMs in the AnonDcm folder and load them here. Multiple DICOMs can be chosen at a time. 
 ## 4. In the left pane, select all subjects
 ## 5. Click on the value of the below attributes, alter it to "Anonymous"
-+ InstanceCreationDate
-+ StudyDate
++ InstanceCreationDate (0008, 0012)
++ StudyDate (0008, 0020)
 + SeriesDate
 + ContentDate
 + ReferringPhysicianName
