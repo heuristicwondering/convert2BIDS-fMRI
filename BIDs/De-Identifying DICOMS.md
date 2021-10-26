@@ -23,7 +23,7 @@
 + PerformedProcedureStepStartDate (0040,0244)
 + PerformedProcedureStep ID (0040,0253)
 ## 6. Check that all of the above fields are now "Anonymous"
-## 7. Click on "AcquisitionDate" and change to today's date YYYYMMDD (0008, 0022)
+## 7. Click on "AcquisitionDate - (0008, 0022)" and change to today's date YYYYMMDD 
 ## 7. Save these DICOMS by "overwriting existing directory."
 
 http://dicomlookup.com/ is a resource which can help find tags.
