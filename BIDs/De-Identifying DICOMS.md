@@ -4,6 +4,7 @@
 ## 3. Click on 'File' and then Open, navigate to your DICOMs in the AnonDcm folder and load them here. Multiple DICOMs can be chosen at a time. To open all dicoms at the same time, you can select the entire participant file
 ## 4. In the left pane, select all subjects
 ## 5. Click on the value of the below attributes, alter it to "Anonymous"
+## 6. Verify that the PatientName/PatientID is the same ID saved in the file name
 + InstanceCreationDate (0008, 0012)
 + StudyDate (0008, 0020)
 + SeriesDate (0008, 0021)
@@ -22,8 +23,8 @@
 + Private (0029, 1119)
 + PerformedProcedureStepStartDate (0040,0244)
 + PerformedProcedureStep ID (0040,0253)
-## 6. Check that all of the above fields are now "Anonymous"
-## 7. Click on "AcquisitionDate - (0008, 0022)" and change to today's date YYYYMMDD 
-## 7. Save these DICOMS by "overwriting existing directory."
+## 7. Check that all of the above fields are now "Anonymous"
+## 8. Click on "AcquisitionDate - (0008, 0022)" and change to today's date YYYYMMDD 
+## 9. Save these DICOMS by "overwriting existing directory."
 
 http://dicomlookup.com/ is a resource which can help find tags.
