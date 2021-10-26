@@ -1,7 +1,7 @@
 # DICOM Anonymization
 ## 1. Copy files to be anonymized from your raw data folder to the AnonDcm folder 
 ## 2. Open DicomBrowser by clicking on the icon on your desktop
-## 3. Click on 'File' and then Open, navigate to your DICOMs in the AnonDcm folder and load them here. Multiple DICOMs can be chosen at a time. To open all dicoms at the same time, you can select the entire participant file
+## 3. Click on 'File' and then Open, navigate to the folder you intend to anonymize. Depending on your computer processing speed, you may either open your DICOMs in the AnonDcm folder and load them here (multiple DICOMs can be chosen at a time) or you can select the entire participant file and load all DICOMs at once. 
 ## 4. In the left pane, select all subjects
 ## 5. Verify that the PatientName/PatientID is the same ID saved in the file name
 ## 6. Click on the value of the below attributes, alter it to "Anonymous"
