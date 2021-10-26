@@ -3,8 +3,9 @@
 ## 2. Open DicomBrowser by clicking on the icon on your desktop
 ## 3. Click on 'File' and then Open, navigate to your DICOMs in the AnonDcm folder and load them here. Multiple DICOMs can be chosen at a time. To open all dicoms at the same time, you can select the entire participant file
 ## 4. In the left pane, select all subjects
-## 5. Click on the value of the below attributes, alter it to "Anonymous"
-## 6. Verify that the PatientName/PatientID is the same ID saved in the file name
+## 5. Verify that the PatientName/PatientID is the same ID saved in the file name
+## 6. Click on the value of the below attributes, alter it to "Anonymous"
+
 + InstanceCreationDate (0008, 0012)
 + StudyDate (0008, 0020)
 + SeriesDate (0008, 0021)
