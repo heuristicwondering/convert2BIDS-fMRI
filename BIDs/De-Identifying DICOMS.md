@@ -1,29 +1,29 @@
 # DICOM Anonymization
-## 1. Copy files to be anonymized to the AnonDcm folder 
+## 1. Copy files to be anonymized from your raw data folder to the AnonDcm folder 
 ## 2. Open DicomBrowser by clicking on the icon on your desktop
-## 3. Click on 'File' and then Open, navigate to your DICOMs in the AnonDcm folder and load them here. Multiple DICOMs can be chosen at a time. 
+## 3. Click on 'File' and then Open, navigate to your DICOMs in the AnonDcm folder and load them here. Multiple DICOMs can be chosen at a time. To open all dicoms at the same time, you can select the entire participant file
 ## 4. In the left pane, select all subjects
 ## 5. Click on the value of the below attributes, alter it to "Anonymous"
 + InstanceCreationDate (0008, 0012)
 + StudyDate (0008, 0020)
-+ SeriesDate
-+ ContentDate
-+ ReferringPhysicianName
-+ PerformingPhysicianName
-+ PatientName
-+ PatientID
-+ PatientComments
-+ PatientBirthDate
-+ PatientSize
-+ PatientWeight
-+ Private_0029_1009
-+ Private_0029_1019
-+ Private_0029_1109
-+ Private_0029_1119
++ SeriesDate (0008, 0021)
++ ContentDate (0008, 0023)
++ ReferringPhysicianName (0008, 0090)
++ PerformingPhysicianName (008, 1050)
++ PatientName (0010, 0010)
++ PatientID (0010, 0020)
++ PatientBirthDate (0010, 0030)
++ PatientSize (0010, 1020)
++ PatientWeight (0010, 1030)
++ PatientComments (0010, 4000)
++ Private (0029, 1009)
++ Private (0029, 1019)
++ Private (0029, 1109)
++ Private (0029, 1119)
 + PerformedProcedureStepStartDate (0040,0244)
 + PerformedProcedureStep ID (0040,0253)
 ## 6. Check that all of the above fields are now "Anonymous"
-## 7. Click on "AcquisitionDate" and change to today's date YYYYMMDD
+## 7. Click on "AcquisitionDate" and change to today's date YYYYMMDD (0008, 0022)
 ## 7. Save these DICOMS by "overwriting existing directory."
 
 http://dicomlookup.com/ is a resource which can help find tags.
