@@ -27,5 +27,14 @@
 ## 7. Check that all of the above fields are now "Anonymous"
 ## 8. Click on "AcquisitionDate - (0008, 0022)" and change to today's date YYYYMMDD 
 ## 9. Save these DICOMS by "overwriting existing directory."
+## 10. Quality Check Step: 
+
++ Open DicomBrowser by clicking on the icon on your desktop
++ Click on 'File' and then Open, navigate to the folder you intend to check. Under the window "Select DICOM files", click the file so that it is highlighted in blue (not opening it fully) and select "open"
++ Check all fields listed below step number 6 to check that they have been changed to "Anonymous" or a recent date for AcquisitionDate (0008, 0022)
++ While checking the fields listed in step number 6, be sure to check that no additional fields have been changed to anonymous
++ Once you have checked the file, DO NOT SAVE. If everything looks correct, change the corresponding box in the excel sheet green and move to the next file. If there is any issue, make note in the excel sheet and on the slack channel
+
+
 
 http://dicomlookup.com/ is a resource which can help find tags.
