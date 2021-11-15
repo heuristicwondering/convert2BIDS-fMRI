@@ -55,6 +55,9 @@ http://dicomlookup.com/ is a resource which can help find tags.
 ## Documentation
 Here we introduce the documentation system we have found useful for tracking the status of each participant's scans. Proper documentation is crucial component of the pipeline and in this folder, you will find a file called [STUDYNAME_dataprocessing.xlsx](./STUDYNAME_dataprocessing.xlsx) that provides a template with some made up data for illustration.
 
+<p align="center" width="100%">
+    <img width="100%" src="../docs/images/DICOM-anonymization/study-sheet-dicom-anonymization.JPG">
+</p>
 
 
 ## Further Reading
