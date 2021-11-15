@@ -1,4 +1,5 @@
-This repository includes all code and instructions for putting the data in BIDS structure.
+# Making the BIDs structure
+The instructions and code here provide the steps needed to anonymize your data and reorganize it into the BIDS structure. It comprises the following **five** steps:
 
 1. Deidentifying DICOMS: Batch Anonymization of the DICOMS using DicomBrowser https://nrg.wustl.edu/software/dicom-browser/
 
