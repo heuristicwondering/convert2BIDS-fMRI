@@ -1,6 +1,8 @@
+<img align="right" width="200" src="../docs/images/DICOM-anonymization/coronal-mprage.png">
+
 # DICOM Anonymization
 ## Background Information
-Neuroimaging data is typically stored in a file format called DICOM (.dcm) when it is first collected. These follow the [DICOM](https://www.dicomstandard.org) (Digital Imaging and COmmunications in Medice) standard. This is an international formatting standard for medical images. The first part of DICOM files contain a 'header', which contains a variety of metadata about the image, including scan parameters used to acquire the image, information about how the data maps onto real-world-space, and demographic information about the participant [[1]](#1). The second part of the file contains the pixel/voxel intensity information for the image.
+Neuroimaging data is typically stored in a file format called DICOM (.dcm) when it is first collected. These follow the [DICOM](https://www.dicomstandard.org) (Digital Imaging and COmmunications in Medice) standard. This is an international formatting standard for medical images. The first part of DICOM files contain a 'header', which contains a variety of metadata about the image, including scan parameters used to acquire the image, information about how the data maps onto real-world-space, and demographic information about the participant [[1]](#1). The second part of the file contains the pixel/voxel intensity information that make up the image.
 
 DICOM header information organizes information by "tags" which are unique numeric identifiers for each piece of information stored. Each piece of information has a four digit "Data Element Number". Similar information is grouped together under a four digit "Group Number". The combined eight-digit number (the Group followed by the Data Element Numbers) is the "Data Element Tag" that uniquely identifies each piece of information in the header [[2]](#2).
 
@@ -64,14 +66,14 @@ Here we have a few example participants undergoing DICOM anonymization. Observe 
 + Participants are entered according to the data they were scanned and a study identifier. The study identifier is particularly useful for keeping track of multi-session scanning. 
 + Importantly, you will see there is also a place for scan notes. We encourage you to enter brief summaries of information acquired during data collection that may impact analysis decisions. If it is clear from the scan notes that data may be problematic, **do not** just say *excluding*! Instead, write down why this data should not or could not be used. Your future self will thank you. :smiley:
 + The list of IDs are the IDs that you will use in the final BIDS-ified data set. If this does not necessarily need to be the same as the identifiers used when collecting data. If you scroll right in the document, you will find a column at the very end where you can track original IDs.
-+ Remember to be mindful that some of the information you may consider entering (in particular the scan notes and original IDs) may be considered identifiable. *Always carefully review this information before deciding to share publicly.*
++ Remember that some of the information you may consider entering (in particular the scan notes and original IDs) may be considered identifiable. *Always carefully review this information before deciding to share publicly.*
 
-DICOM Anonymization occurs in two steps, the anonymization step and the quality control step (see [Instructions](##instructions)). 
+DICOM Anonymization occurs in two steps, the anonymization step and the quality control step (see [Instructions](##instructions)). To use this documentation,
 
-1. To use this documentation, the person conducting the anonymization should put their initials in the "DICOMS Anonymized column" only for the participants their currently working on. 
-2. Once anonymization is complete for particpant, the entry background color should be changed to green to indicate that the data is ready for review.
+1. The person conducting the anonymization should put their initials in the "DICOMS Anonymized column" only for the participants their currently working on. 
+2. Once anonymization is complete for a participant, the entry background color should be changed to green to indicate that the data is ready for review.
 3. The quality control reviewer should similarly mark their initials in the "DICOM anonymization check" only for participants they are actively reviewing.
-4. Tags with any problems should be noted here next to the reviewers initials with a brief explanation of what the problem is. This allows the people doing the anonymization review and fix these.
+4. Tags with any problems should be noted here next to the reviewers initials with a brief explanation of what the problem is. This allows the people doing the anonymization to review and fix these.
 5. Once it's been verified that the anonymization was successful and any problems addressed, the "DICOM anonymization check" background color can be changed to green to indicate that the data is ready for the next processing step.
 
 ## Further Reading
