@@ -53,12 +53,26 @@ TK
 http://dicomlookup.com/ is a resource which can help find tags.
 
 ## Documentation
-Here we introduce the documentation system we have found useful for tracking the status of each participant's scans. Proper documentation is crucial component of the pipeline and in this folder, you will find a file called [STUDYNAME_dataprocessing.xlsx](./STUDYNAME_dataprocessing.xlsx) that provides a template with some made up data for illustration.
+Here we introduce the documentation system we have found useful for tracking the status of each participant's scans. Proper documentation is crucial component of the pipeline and in this folder, you will find a file called [STUDYNAME_dataprocessing.xlsx](./STUDYNAME_dataprocessing.xlsx) that provides a template with some made up data included for illustration. We will refer to this document throughout this tutorial.
 
 <p align="center" width="100%">
     <img width="100%" src="../docs/images/DICOM-anonymization/study-sheet-dicom-anonymization.JPG">
 </p>
 
+Here we have a few example participants undergoing DICOM anonymization. Observe that,
+
++ Participants are entered according to the data they were scanned and a study identifier. The study identifier is particularly useful for keeping track of multi-session scanning. 
++ Importantly, you will see there is also a place for scan notes. We encourage you to enter brief summaries of information acquired during data collection that may impact analysis decisions. If it is clear from the scan notes that data may be problematic, **do not** just say *excluding*! Instead, write down why this data should not or could not be used. Your future self will thank you. :smiley:
++ The list of IDs are the IDs that you will use in the final BIDS-ified data set. If this does not necessarily need to be the same as the identifiers used when collecting data. If you scroll right in the document, you will find a column at the very end where you can track original IDs.
++ Remember to be mindful that some of the information you may consider entering (in particular the scan notes and original IDs) may be considered identifiable. *Always carefully review this information before deciding to share publicly.*
+
+DICOM Anonymization occurs in two steps, the anonymization step and the quality control step (see [Instructions](##instructions)). 
+
+1. To use this documentation, the person conducting the anonymization should put their initials in the "DICOMS Anonymized column" only for the participants their currently working on. 
+2. Once anonymization is complete for particpant, the entry background color should be changed to green to indicate that the data is ready for review.
+3. The quality control reviewer should similarly mark their initials in the "DICOM anonymization check" only for participants they are actively reviewing.
+4. Tags with any problems should be noted here next to the reviewers initials with a brief explanation of what the problem is. This allows the people doing the anonymization review and fix these.
+5. Once it's been verified that the anonymization was successful and any problems addressed, the "DICOM anonymization check" background color can be changed to green to indicate that the data is ready for the next processing step.
 
 ## Further Reading
 <a id="1">[1]</a>
