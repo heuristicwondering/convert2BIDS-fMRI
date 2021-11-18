@@ -1,15 +1,21 @@
 <img align="right" width="200" src="../docs/images/DICOM-anonymization/coronal-mprage.png">
 
 # DICOM Anonymization
+Removing identifiable information from the DICOM headers. 
+
 ## Background Information
 Neuroimaging data is typically stored in a file format called DICOM (.dcm) when it is first collected. These follow the [DICOM](https://www.dicomstandard.org) (Digital Imaging and COmmunications in Medice) standard. This is an international formatting standard for medical images. The first part of DICOM files contain a 'header', which contains a variety of metadata about the image, including scan parameters used to acquire the image, information about how the data maps onto real-world-space, and demographic information about the participant [[1]](#1). The second part of the file contains the pixel/voxel intensity information that make up the image.
 
-DICOM header information organizes information by "tags" which are unique numeric identifiers for each piece of information stored. Each piece of information has a four digit "Data Element Number". Similar information is grouped together under a four digit "Group Number". The combined eight-digit number (the Group followed by the Data Element Numbers) is the "Data Element Tag" that uniquely identifies each piece of information in the header [[2]](#2).
+DICOM header information organizes information by "tags" which are unique numeric identifiers for each piece of information stored. Each piece of information has a four digit "Data Element Number". Similar information is grouped together under a four digit "Group Number". The combined eight-digit number typically displayed in parenthesis, (Group Number foll0wed by Data Element Number), is the "Data Element Tag" that uniquely identifies each piece of information in the header [[2]](#2).
 
 Many tags have, according to the DICOM standard, been reserved for storing specific information. For example, the Data Element Tag (0010, 0010) is called Patient's Name and tag (0008 1030) is called Study Description [[2]](#2). Similar information is often grouped under the same Group Number. For example, Group Number 0010 often contains patient information while Group Number 0008 often contains information about the study, however this is not enforced by the standard [[3]](#3).
 
+While some information is crucial to correctly display the image and should almost never be edited, other data elements constitute identifiable information that must be removed prior to publicly sharing data. What counts as identifiable data is constantly evolving as researchers discover new ways to identify individuals with the right pieces of information. For example, 87% of the people in the United States may be identifiable by only their gender, birthdate, and the zip code where they live [[4]](#4). To make matters more confusing, regulatory bodies may use differing criteria. We encourage users of this guide to consult with their supervising ethics boards to ensure compliance in removing all identifiable data.
+
+In the instructions provided below, we provide a list of tags you may want to anonymize. This was based on data collected on MRI machines at the Beckman Institute for Advanced Science and Technology. Your data may differ on what data is stored in the DICOM headers, and you should always thoroughly review the header contents in at least one participant prior to deciding your own anonymization list.
+
 ## Software Setup
-TK
+Examples used in this tutorial were generated using the Ubuntu 20.04 operating system. Although we make no specific recommendations regarding computer setup, keep in mind a number of neuroimaging tools 
 
 ## Instructions
 TK
@@ -85,3 +91,6 @@ National Electrical Manufacturers Association (2021) (tech.). *DICOM - Data Dict
 
 <a id="3">[3]</a>
 National Electrical Manufacturers Association (2021) (tech.). *DICOM - Message Exchange* (Vol. PS3.7, Ser. The DICOM Standard)
+
+<a id="4">[4]</a>
+Sweeney, L. (2000). Simple demographics often identify people uniquely. *Health (San Fransisco)*, *671*(2000), 1-34.
