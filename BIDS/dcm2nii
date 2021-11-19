@@ -1,7 +1,7 @@
 #Convert the raw .dcm files into BIDS-compatible .nii
 
 #1. To open matlab, type "matlab" in home terminal. 
-      Once in matlab, run dicm2nii converter in the terminal at the bottom of the window, and enter the information below:
+      Once in matlab, using the terminal at the bottom of the window, enter the information below to run dicm2nii converter:
       cd SNAP/Projects/BIDs-Conversion/jillian/dicm2nii-master
       dicm2nii
 
