@@ -33,11 +33,11 @@
   t1_mprage_sag_p2_iso                    anat         T1w      
   fMRIFieldMap_AP                         anat  
   fmriFieldMap_PA                         anat
-  Block_1_SET_SBRef                       func
+  Block_1_SET_SBRef                       func         task-socialevaulation_run-01_sbref
   Block_1_SET                             func         task-socialevaulation_run-01_bold
-  Block_1_RESTING_STATE_SBRef             func
+  Block_1_RESTING_STATE_SBRef             func         task-resting_run-01_sbref
   Block_1_RESTING_STATE                   func         task-resting_run-01_bold
-  Block1_EGNG_SBRef                       func
+  Block1_EGNG_SBRef                       func         tasl-egonogo_run-01_sbref
   Block1_EGNG                             func         tasl-egonogo_run-01_bold
   AX                                      anat
   COR                                     anat
