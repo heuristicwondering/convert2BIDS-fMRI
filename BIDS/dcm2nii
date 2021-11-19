@@ -1,11 +1,12 @@
 #Convert the raw .dcm files into BIDS-compatible .nii
 
-#1. In matlab, run dicm2nii converter
-cd SNAP/Projects/BIDs-Conversion/katie/Code/dicm2nii-master
-dicm2nii
+#1. To open matlab, type "matlab" in home terminal. 
+      Once in matlab, run dicm2nii converter in the terminal at the bottom of the window, and enter the information below:
+      cd SNAP/Projects/BIDs-Conversion/jillian/dicm2nii-master
+      dicm2nii
 
-2. Select the participant's anonymized dicom files ~/SNAP/Data/BIDS/SNAP#/AnonDcm
-3. Select output directory: ~/SNAP/Data/BIDS/SNAP#/RawData
+2. Select the participant's anonymized dicom files ~/STEP/Data/Files from Lab Network Share/AnonDcm/
+3. Select output directory: ~/STEP/Data/BIDS/Raw Data/
 
 4. Check presets:
       Output format: BIDS
@@ -25,38 +26,21 @@ dicm2nii
   AcquisitionDate: NaT
   Comment: Blank
 
-SNAP1
+
     Name					      Type		Modality (this will be the output file name)
 
-  MPRAGE    	                        anat	      T1w
-  AxialT2                                 anat        inplaneT2
-  Block_1_Resting_State_180_BR_           func        task-resting_run-01_bold
-  Block_2_Match_242_BR_                   func        task-emotion_run-01_bold       
-  Block_3_Star_106_BR_                    func        task-dotprobe_run-01_bold
-  Block_4_Catch_self_paced_varying..      func        task-cyberball_run-01_bold
-  Block_5_Driving                         func        task-driving_run-01_bold
-  Block_6_People_1                        func        task-mingroup1_run-01_bold
-  Block_7_People_2                        func        task-mingroup2_run-01_bold
-
-SNAP2
-    Name					      Type		Modality (this will be the output file name)
-
-  MPRAGE    	                        anat	      T1w
-  AxialT2                                 anat        inplaneT2
-  Block_1_Opinions                        func        task-feedback_run-01_bold     
-  Block_2_Reactions                       func        task-gonogo_run-01_bold       
-  Block_3_Cyberball                       func        task-cyberball_run-01_bold
-  Block_4_Star                            func        task-dotprobe_run-01_bold
-  
-SNAP3
-    Name					      Type		Modality (this will be the output file name)
-
-  MPRAGE    	                        anat	      T1w
-  AxialT2                                 anat        inplaneT2
-  BOLD_Opinion                            func        task-feedback_run-01_bold
-  BOLD_Reaction                           func        task-gonogo_run-01_bold
-  BOLD_Catch                              func        task-cyberball_run-01_bold     
-  BOLD_Dot                                func        task-dotprobe_run-01_bold       
+  AAHead_Scout_64ch_head_coil   	      anat	      
+  t1_mprage_sag_p2_iso                    anat        
+  fMRIFieldMap_AP                         anat  
+  fmriFieldMap_PA                         anat
+  Block_1_SET_SBRef                       func
+  Block_1_SET                             func         task-socialevaulation_run-01_bold
+  Block_1_RESTING_STATE_SBRef             func
+  Block_1_RESTING_STATE                   func         task-resting_run-01_bold
+  Block1_EGNG_SBRef                       func
+  Block1_EGNG                             func         tasl-egonogo_run-01_bold
+  AX                                      anat
+  COR                                     anat
 
 *If there are two runs of the same task, check the scan notes to see if the task was repeated. If so change "run-01" to "run-02" for the second run of the task.
 
