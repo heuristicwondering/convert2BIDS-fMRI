@@ -27,10 +27,10 @@
   Comment: Blank
 
 
-    Name					      Type		Modality (this will be the output file name)
+  Name					      Type		Modality (this will be the output file name)
 
   AAHead_Scout_64ch_head_coil   	      anat	      
-  t1_mprage_sag_p2_iso                    anat        
+  t1_mprage_sag_p2_iso                    anat         T1w      
   fMRIFieldMap_AP                         anat  
   fmriFieldMap_PA                         anat
   Block_1_SET_SBRef                       func
