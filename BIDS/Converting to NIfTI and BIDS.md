@@ -1,6 +1,17 @@
-#Convert the raw .dcm files into BIDS-compatible .nii
+<img align="right" width="400" src="../docs/images/dcm2nii-and-bids-restructuring/organizing-files.png">
 
-#1. To open matlab, type "matlab" in home terminal. 
+# Converting to NIfTI and BIDS
+Converting anonymized DICOM files into NIfTI files and reorganizing/renaming files and folders to follow the BIDS standard.
+
+## Background Information
+TK
+
+## Software Setup
+TK
+
+## Instructions
+
+1. To open matlab, type "matlab" in home terminal. 
       Once in matlab, using the terminal at the bottom of the window, enter the information below to run dicm2nii converter:
       cd SNAP/Projects/BIDs-Conversion/jillian/dicm2nii-master
       dicm2nii
@@ -45,3 +56,10 @@
 *If there are two runs of the same task, check the scan notes to see if the task was repeated. If so change "run-01" to "run-02" for the second run of the task.
 
 7. Hit "ok" and let it run.
+
+## Documentation
+TK
+
+## Further Reading
+<a id="1">[1]</a>
+TK
