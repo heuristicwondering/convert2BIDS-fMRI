@@ -10,16 +10,16 @@ DICOM header information organizes information by "tags" which are unique numeri
 
 Many tags have, according to the DICOM standard, been reserved for storing specific information. For example, the Data Element Tag (0010, 0010) is called Patient's Name and tag (0008 1030) is called Study Description [[2]](#2). Similar information is often grouped under the same Group Number. For example, Group Number 0010 often contains patient information while Group Number 0008 often contains information about the study, however this is not enforced by the standard [[3]](#3).
 
-While some information is crucial to correctly display the image and should almost never be edited, other data elements constitute identifiable information that must be removed prior to publicly sharing data. Some data like  What counts as identifiable data is constantly evolving as researchers discover new ways to identify individuals with the right pieces of information. For example, 87% of the people in the United States may be identifiable by only their gender, birthdate, and the zip code where they live [[4]](#4). To make matters more confusing, regulatory bodies may use differing criteria. We encourage users of this guide to consult with their supervising ethics boards to ensure compliance in removing all potentially identifiable data.
+While some information is crucial to correctly display the image and should almost never be edited, other data elements constitute identifiable information that must be removed prior to publicly sharing data. What counts as identifiable data is constantly evolving as researchers discover new ways to identify individuals with the right pieces of information. For example, 87% of the people in the United States may be identifiable by only their gender, birthdate, and the zip code where they live [[4]](#4). To make matters more confusing, regulatory bodies may use differing criteria. We encourage users of this guide to consult with their supervising ethics boards to ensure compliance in removing all potentially identifiable data.
 
-In the instructions provided below, we provide a list of tags you may want to anonymize. This was based on data collected on MRI machines at the Beckman Institute for Advanced Science and Technology. Your data may differ on what data is stored in the DICOM headers, and you should always thoroughly review the header contents in at least one participant prior to deciding your own anonymization list.
+In the instructions provided below, we provide a list of tags you may want to anonymize. This was based on data collected on MRI machines at the Beckman Institute for Advanced Science and Technology. Your data may differ in terms of what is stored in the DICOM headers, and you should always thoroughly review the header contents in at least one participant prior to deciding your own anonymization list.
 
 ## Software Setup
 ### *Preliminary Note*
 The software setup sections you will encounter throughout this tutorial do not intend to reinvent the wheel and will largely defer to source documentation for installation details. The intent rather is to describe the tools needed for each step (and where to find them).
 
 ### Choosing an operating system
-Examples used in this tutorial were generated using the Ubuntu 20.04 operating system. We make no specific recommendations regarding computer setup, however keep in mind that some neuroimaging tools (like [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation)) do not run natively on Windows and require additional setup. Command line instructions are specific to the Bash terminal which is part of the default Ubuntu installation.
+Examples used in this tutorial were generated using the Ubuntu 20.04 operating system. We make no specific recommendations regarding computer setup, however keep in mind that some neuroimaging tools (like [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation)) do not run natively on Windows and require additional setup. Command line instructions are specific to the Bash terminal, which is part of the default Ubuntu installation.
 
 ### DicomBrowser
 To anonymize multiple DICOM files at once, we use the DicomBrowser tool ([https://download.xnat.org/dicombrowser/](https://download.xnat.org/dicombrowser/)).
@@ -50,40 +50,41 @@ The following instructions assume the data you have collected (which we will ref
                 
 ```
 
-1. To start, create a file called AnonDcm in the same directory of your source folder. In the AnonDcm folder, create any subfolders that further organize the subject folders such as session or site.
+### Anonymizing
+1. To start, create a file called AnonDcm in the same directory that your source folder lives in. In the AnonDcm folder, create any subfolders that further organize the subject folders such as session or site.
 2. Copy the subject level folder and its contents to the corresponding place in the AnonDcm folder.
+   + We recommend copying rather than anonymizing the data in place because if you make a mistake, it's easy to start over.
 3. Open DicomBrowser by typing `DicomBrowser` in the terminal.
-4. Click on 'File' and then 'Open', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser with search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
-   1. Depending on the amount of data and computational resources available, this may cause DicomBrowser to hang. If you find this, try loading fewer DICOMs at once, such as going by individual runs.
+4. In the top menu bar, click on 'File' and then 'Open', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser with search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
+   + Depending on the amount of data and computational resources available, this may cause DicomBrowser to hang. If you find this, try loading fewer DICOMs at once, such as going by individual runs.
 5. In the left pane, click on the folder that says 'Patient <ID>'. 
-   1. This will select all DICOM files that were found with that value in the Patient ID (0010, 0020) tag. If multiple Patient IDs were found (such as if you were anonymizing multiple subjects at once), then they would appear as separate folders in the left panel.
+   + This will select all DICOM files that were found with that value in the Patient ID (0010, 0020) tag. If multiple Patient IDs were found (such as if you were anonymizing multiple subjects at once), then they would appear as separate folders in the left panel.
 
 <p align="center" width="100%">
     <img width="100%" src="../docs/images/DICOM-anonymization/DicomBrowser.PNG">
 </p>
 
-
-## 5. Verify that the PatientName/PatientID is the same ID saved in the file name
-## 6. Click on the value of the below attributes, alter it to "Anonymous"
-
-+ InstanceCreationDate (0008, 0012)
-+ StudyDate (0008, 0020)
-+ SeriesDate (0008, 0021)
-+ ContentDate (0008, 0023)
-+ ReferringPhysicianName (0008, 0090)
-+ PerformingPhysicianName (008, 1050)
-+ PatientName (0010, 0010)
-+ PatientID (0010, 0020)
-+ PatientBirthDate (0010, 0030)
-+ PatientSize (0010, 1020)
-+ PatientWeight (0010, 1030)
-+ PatientComments (0010, 4000)
-+ Private (0029, 1009)
-+ Private (0029, 1019)
-+ Private (0029, 1109)
-+ Private (0029, 1119)
-+ PerformedProcedureStepStartDate (0040,0244)
-+ PerformedProcedureStep ID (0040,0253)
+6. Verify that the 'Patient <ID>' listed in the left pane has the same ID as the subject folder you opened.
+   + It's not unheard of for DICOMs to accidentally get saved into the wrong subject folder when collecting data. This is a really simple step to make sure that didn't happen.
+7. For each tag/name listed below, click on the value field. This will display a cursor to allow you to type. Alter the value to "Anonymous". (You will notice that this automatically changes the action field to "Assign".)
+   + (0008, 0012) InstanceCreationDate
+   + (0008, 0020) StudyDate
+   + (0008, 0021) SeriesDate
+   + (0008, 0023) ContentDate
+   + (0008, 0090) ReferringPhysicianName
+   + (0008, 1050) PerformingPhysicianName
+   + (0010, 0010) PatientName
+   + (0010, 0020) PatientID
+   + (0010, 0030) PatientBirthDate
+   + (0010, 1020) PatientSize
+   + (0010, 1030) PatientWeight
+   + (0010, 4000) PatientComments
+   + (0029, 1009) Private
+   + (0029, 1019) Private
+   + (0029, 1109) Private
+   + (0029, 1119) Private
+   + (0040,0244) PerformedProcedureStepStartDate
+   + (0040,0253) PerformedProcedureStep ID
 ## 7. Check that all of the above fields are now "Anonymous"
 ## 8. Click on "AcquisitionDate - (0008, 0022)" and change to today's date YYYYMMDD 
 ## 9. Save these DICOMS by "overwriting existing directory."
