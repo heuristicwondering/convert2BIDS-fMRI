@@ -110,7 +110,7 @@ The following instructions assume the data you have collected (which we will ref
 
 2. In the top menu bar, click on '*File*' >> '*Open*', navigate to the folder you intend check. Single click the folder so that it is highlighted in blue (not navigating inside it) and select '*Open*'.
 
-3.Check all fields listed in step number 7 of [Anonymizing](#anonymizing) to check that they have been changed to "Anonymous". Check that the tag **(0008, 0022)** "Acquisition Date" now has a recent date in its value field.
+3. Check all fields listed in step number 7 of [Anonymizing](#anonymizing) to check that they have been changed to "Anonymous". Check that the tag **(0008, 0022)** "Acquisition Date" now has a recent date in its value field.
    + Also make sure there are no typos in the anonymized fields and capitalization is consistent.
 
 4. While checking the fields meant to be anonymized, be sure to check that no additional fields have been changed to "Anonymous".
