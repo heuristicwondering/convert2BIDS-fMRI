@@ -4,7 +4,9 @@
 Converting anonymized DICOM files into NIfTI files and reorganizing/renaming files and folders to follow the BIDS standard.
 
 ## Background Information
-TK
+DICOM images provide a means for storing and sharing a wide variety of medical images. The flexibility provided by the DICOM standard to store many types of images also makes it more difficult to write software to handle the many options available [[1]](#1). Thus there was a need for an file type that would simplify neuroimaging data storage and lower the barrier to software development.
+
+One of the first file types to address this problem was the ANALYZE 7.5 format.
 
 ## Software Setup
 TK
@@ -62,4 +64,4 @@ TK
 
 ## Further Reading
 <a id="1">[1]</a>
-TK
+Li, X., Morgan, P.S., Ashburner, J., Smith, J., & Rorden, C. (2016). The first step for neuroimaging data analysis: DICOM to NIfTI conversion. *Journal of neuroscience methods*, 264, 47-56.
