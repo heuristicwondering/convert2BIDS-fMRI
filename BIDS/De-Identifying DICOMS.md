@@ -10,6 +10,8 @@ DICOM header information organizes information by "tags" which are unique numeri
 
 Many tags have, according to the DICOM standard, been reserved for storing specific information. For example, the Data Element Tag (0010, 0010) is called Patient's Name and tag (0008 1030) is called Study Description [[2]](#2). Similar information is often grouped under the same Group Number. For example, Group Number 0010 often contains patient information while Group Number 0008 often contains information about the study, however this is not enforced by the standard [[3]](#3).
 
+[http://dicomlookup.com/](http://dicomlookup.com/) is a useful resource which can help provide more information about individual tags .
+
 While some information is crucial to correctly display the image and should almost never be edited, other data elements constitute identifiable information that must be removed prior to publicly sharing data. What counts as identifiable data is constantly evolving as researchers discover new ways to identify individuals with the right pieces of information. For example, 87% of the people in the United States may be identifiable by only their gender, birthdate, and the zip code where they live [[4]](#4). To make matters more confusing, regulatory bodies may use differing criteria. We encourage users of this guide to consult with their supervising ethics boards to ensure compliance in removing all potentially identifiable data.
 
 In the instructions provided below, we provide a list of tags you may want to anonymize. This was based on data collected on MRI machines at the Beckman Institute for Advanced Science and Technology. Your data may differ in terms of what is stored in the DICOM headers, and you should always thoroughly review the header contents in at least one participant prior to deciding your own anonymization list.
@@ -100,20 +102,23 @@ The following instructions assume the data you have collected (which we will ref
     + If anonymizing multiple subjects at once, make sure that '*Write all loaded files*' is selected in the bottom drop down menu. If only working with one participant, then the default '*Write only selected files*' should work fine.
     + The reason why we advise overwriting existing files is because the default behavior of appending '-anon' to the file name is not part of the BIDs standard and later conversions steps do not know how to properly handle this extra string. 
 
-11. Click save, update your study documentation [(see below)](##documentation), and you're done!
+11. Click save, update your study documentation [(see below)](#documentation), and you're done!
 
 
-## 10. Quality Check Step: 
+### Quality Control 
+1. Open DicomBrowser by typing `DicomBrowser` in the terminal.
 
-+ Open DicomBrowser by clicking on the icon on your desktop
-+ Click on 'File' and then Open, navigate to the folder you intend to check. Under the window "Select DICOM files", click the file so that it is highlighted in blue (not opening it fully) and select "open"
-+ Check all fields listed below step number 6 to check that they have been changed to "Anonymous" or a recent date for AcquisitionDate (0008, 0022)
-+ While checking the fields listed in step number 6, be sure to check that no additional fields have been changed to anonymous
-+ Once you have checked the file, DO NOT SAVE. If everything looks correct, change the corresponding box in the excel sheet green and move to the next file. If there is any issue, make note in the excel sheet and on the slack channel
+2. In the top menu bar, click on '*File*' >> '*Open*', navigate to the folder you intend check. Single click the folder so that it is highlighted in blue (not navigating inside it) and select '*Open*'.
+
+3.Check all fields listed in step number 7 of [Anonymizing](#anonymizing) to check that they have been changed to "Anonymous". Check that the tag **(0008, 0022)** "Acquisition Date" now has a recent date in its value field.
+   + Also make sure there are no typos in the anonymized fields and capitalization is consistent.
+
+4. While checking the fields meant to be anonymized, be sure to check that no additional fields have been changed to "Anonymous".
+
+5. Once you have checked the file, **DO NOT SAVE**. If everything looks correct, update the study documentation [(see below)](#documentation) and repeat move on to the next files. If there is any issue, make note in the study documentation and let anonymizing team members know.
 
 
 
-http://dicomlookup.com/ is a resource which can help find tags.
 
 ## Documentation
 Here we introduce the documentation system we have found useful for tracking the status of each participant's scans. Proper documentation is crucial component of the pipeline and in this folder, you will find a file called [STUDYNAME_dataprocessing.xlsx](./STUDYNAME_dataprocessing.xlsx) that provides a template with some made up data included for illustration. We will refer to this document throughout this tutorial.
