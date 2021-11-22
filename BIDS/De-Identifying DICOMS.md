@@ -52,42 +52,57 @@ The following instructions assume the data you have collected (which we will ref
 
 ### Anonymizing
 1. To start, create a file called AnonDcm in the same directory that your source folder lives in. In the AnonDcm folder, create any subfolders that further organize the subject folders such as session or site.
+
 2. Copy the subject level folder and its contents to the corresponding place in the AnonDcm folder.
    + We recommend copying rather than anonymizing the data in place because if you make a mistake, it's easy to start over.
+   
 3. Open DicomBrowser by typing `DicomBrowser` in the terminal.
-4. In the top menu bar, click on 'File' and then 'Open', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser with search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
+
+4. In the top menu bar, click on '*File*' >> '*Open*', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser with search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
    + Depending on the amount of data and computational resources available, this may cause DicomBrowser to hang. If you find this, try loading fewer DICOMs at once, such as going by individual runs.
-5. In the left pane, click on the folder that says 'Patient <ID>'. 
+   
+5. In the left pane, click on the folder that says 'Patient \<ID>'. 
    + This will select all DICOM files that were found with that value in the Patient ID (0010, 0020) tag. If multiple Patient IDs were found (such as if you were anonymizing multiple subjects at once), then they would appear as separate folders in the left panel.
 
 <p align="center" width="100%">
     <img width="100%" src="../docs/images/DICOM-anonymization/DicomBrowser.PNG">
 </p>
 
-6. Verify that the 'Patient <ID>' listed in the left pane has the same ID as the subject folder you opened.
+6. Verify that the 'Patient \<ID>' listed in the left pane has the same ID as the subject folder you opened.
    + It's not unheard of for DICOMs to accidentally get saved into the wrong subject folder when collecting data. This is a really simple step to make sure that didn't happen.
+   
 7. For each tag/name listed below, click on the value field. This will display a cursor to allow you to type. Alter the value to "Anonymous". (You will notice that this automatically changes the action field to "Assign".)
-   + (0008, 0012) InstanceCreationDate
-   + (0008, 0020) StudyDate
-   + (0008, 0021) SeriesDate
-   + (0008, 0023) ContentDate
-   + (0008, 0090) ReferringPhysicianName
-   + (0008, 1050) PerformingPhysicianName
-   + (0010, 0010) PatientName
-   + (0010, 0020) PatientID
-   + (0010, 0030) PatientBirthDate
-   + (0010, 1020) PatientSize
-   + (0010, 1030) PatientWeight
-   + (0010, 4000) PatientComments
-   + (0029, 1009) Private
-   + (0029, 1019) Private
-   + (0029, 1109) Private
-   + (0029, 1119) Private
-   + (0040,0244) PerformedProcedureStepStartDate
-   + (0040,0253) PerformedProcedureStep ID
-## 7. Check that all of the above fields are now "Anonymous"
-## 8. Click on "AcquisitionDate - (0008, 0022)" and change to today's date YYYYMMDD 
-## 9. Save these DICOMS by "overwriting existing directory."
+   + **(0008, 0012)** Instance Creation Date
+   + **(0008, 0020)** Study Date
+   + **(0008, 0021)** Series Date
+   + **(0008, 0023)** Content Date
+   + **(0008, 0090)** Referring Physician Name
+   + **(0008, 1050)** Performing Physician Name
+   + **(0010, 0010)** Patient Name
+   + **(0010, 0020)** Patient ID
+   + **(0010, 0030)** Patient Birth Date
+   + **(0010, 1020)** Patient Size
+   + **(0010, 1030)** Patient Weight
+   + **(0010, 4000)** Patient Comments
+   + **(0029, 1009)** Private
+   + **(0029, 1019)** Private
+   + **(0029, 1109)** Private
+   + **(0029, 1119)** Private
+   + **(0040,0244)** Performed Procedure Step Start Date
+   + **(0040,0253)** Performed Procedure Step ID
+
+8. Double check that all of the above fields are now "Anonymous" (and no nearby fields were accidently changed).
+
+9. Click on the value field for **(0008, 0022)** "Acquisition Date". Change this to today's date YYYYMMDD.
+   + Note that this date format (year, month, day) is preferred because it is compliant with the ISO 8601 international standard for communication of dates. [[5]](#5)[[6]](#6).
+
+10. In the top menu bar, click on '*File*' >> '*Save...*'. This will pop up a new window with options for saving. Open the topmost drop-down menu and select '*Overwrite existing files*'. 
+    + If anonymizing multiple subjects at once, make sure that '*Write all loaded files*' is selected in the bottom drop down menu. If only working with one participant, then the default '*Write only selected files*' should work fine.
+    + The reason why we advise overwriting existing files is because the default behavior of appending '-anon' to the file name is not part of the BIDs standard and later conversions steps do not know how to properly handle this extra string. 
+
+11. Click save, update your study documentation [(see below)](##documentation), and you're done!
+
+
 ## 10. Quality Check Step: 
 
 + Open DicomBrowser by clicking on the icon on your desktop
@@ -134,3 +149,9 @@ National Electrical Manufacturers Association (2021) (tech.). *DICOM - Message E
 
 <a id="4">[4]</a>
 Sweeney, L. (2000). Simple demographics often identify people uniquely. *Health (San Fransisco)*, *671*(2000), 1-34.
+
+<a id="5">[5]</a>
+International Organization for Standardization. (2019, February 25). ISO 8601-1:2019. ISO. Retrieved November 22, 2021, from https://www.iso.org/standard/70907.html.
+
+<a id="6">[6]</a>
+Wikimedia Foundation. (2021, November 20). *ISO 8601*. Wikipedia. Retrieved November 22, 2021, from https://en.wikipedia.org/wiki/ISO_8601.
