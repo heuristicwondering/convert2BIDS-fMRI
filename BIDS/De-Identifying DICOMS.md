@@ -136,7 +136,7 @@ Here we have a few example participants undergoing DICOM anonymization. Observe 
 
 DICOM Anonymization occurs in two steps, the anonymization step and the quality control step (see [Instructions](##instructions)). To use this documentation,
 
-1. The person conducting the anonymization should put their initials in the "DICOMS Anonymized column" only for the participants their currently working on. 
+1. The person conducting the anonymization should put their initials in the "DICOMS Anonymized column" only for the participants they're currently working on. 
 2. Once anonymization is complete for a participant, the entry background color should be changed to green to indicate that the data is ready for review.
 3. The quality control reviewer should similarly mark their initials in the "DICOM anonymization check" only for participants they are actively reviewing.
 4. Tags with any problems should be noted here next to the reviewers initials with a brief explanation of what the problem is. This allows the people doing the anonymization to review and fix these.
