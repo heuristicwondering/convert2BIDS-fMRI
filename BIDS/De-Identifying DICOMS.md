@@ -60,8 +60,9 @@ The following instructions assume the data you have collected (which we will ref
    
 3. Open DicomBrowser by typing `DicomBrowser` in the terminal.
 
-4. In the top menu bar, click on '*File*' >> '*Open*', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser with search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
+4. In the top menu bar, click on '*File*' >> '*Open*', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser will search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
    + Depending on the amount of data and computational resources available, this may cause DicomBrowser to hang. If you find this, try loading fewer DICOMs at once, such as going by individual runs.
+   + Conversely, if you have adequate computational resources, you can load several participants at once. Use Ctrl+click to select
    
 5. In the left pane, click on the folder that says 'Patient \<ID>'. 
    + This will select all DICOM files that were found with that value in the Patient ID (0010, 0020) tag. If multiple Patient IDs were found (such as if you were anonymizing multiple subjects at once), then they would appear as separate folders in the left panel.
