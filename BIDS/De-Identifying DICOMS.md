@@ -8,13 +8,14 @@ Neuroimaging data is typically stored in a file format called DICOM (.dcm) when 
 
 DICOM headers organize information by "tags" which are unique numeric identifiers for each piece of information stored. Each piece of information has a four digit "Data Element Number". Similar information is grouped together under a four digit "Group Number". The combined eight-digit number typically displayed in parenthesis, (Group Number followed by Data Element Number), is the "Data Element Tag" that uniquely identifies each piece of information in the header [[2]](#2).
 
-Many tags have, according to the DICOM standard, been reserved for storing specific information. For example, the Data Element Tag (0010, 0010) is called Patient's Name and tag (0008 1030) is called Study Description [[2]](#2). Similar information is often grouped under the same Group Number. For example, Group Number 0010 often contains patient information while Group Number 0008 often contains information about the study, however this is not enforced by the standard [[3]](#3).
-
-[http://dicomlookup.com/](http://dicomlookup.com/) is a useful resource which can help provide more information about individual tags .
+Many tags have, according to the DICOM standard, been reserved for storing specific information<sup>[1](#footnotes)</sup>. For example, the Data Element Tag (0010, 0010) is called Patient's Name and tag (0008 1030) is called Study Description [[2]](#2). Similar information is often grouped under the same Group Number. For example, Group Number 0010 often contains patient information while Group Number 0008 often contains information about the study, however this is not enforced by the standard [[3]](#3).
 
 While some information is crucial to correctly display the image and should almost never be edited, other data elements constitute identifiable information that must be removed prior to publicly sharing data. What counts as identifiable data is constantly evolving as researchers discover new ways to identify individuals with the right pieces of information. For example, 87% of the people in the United States may be identifiable by only their gender, birthdate, and the zip code where they live [[4]](#4). To make matters more confusing, regulatory bodies may use differing criteria. We encourage users of this guide to consult with their supervising ethics boards to ensure compliance in removing all potentially identifiable data.
 
 In the instructions provided below, we provide a list of tags you may want to anonymize. This was based on data collected on MRI machines at the Beckman Institute for Advanced Science and Technology. Your data may differ in terms of what is stored in the DICOM headers, and you should always thoroughly review the header contents in at least one participant prior to deciding your own anonymization list.
+
+### Footnotes
+1. [http://dicomlookup.com/](http://dicomlookup.com/) is a useful resource which can help provide more information about individual tags.
 
 ## Software Setup
 ### *Preliminary Note*
