@@ -16,7 +16,14 @@ To address the shortcomings of the ANALYZE format, the U.S. National Institutes 
 NIfTI allows data to be stored as either and .hdr/.img file pair (originally for backwards compatability with non-NIfTI aware software) or as a single *.nii* file [[8]](#8)[[9]](#9). Similar to ANALYZE, NIfTI files can store a series of brain images either as multiple files each containing a single 3D brain volume, or as a single large file in which time is represented along a fourth dimension. The BIDS specification (discussed below) additionally recommends compressing NIfTI files using gzip (thus files with the *.nii.gz* file extension represent one or more compressed *.nii* files<sup>[4](#footnotes)</sup>) [[12]](#12) and are an increasingly common approach to managing the large amounts of data produced by neuroimaging experiments.
 
 ### The BIDS Specification
-TK
+Heterogeneity in neuroimaging file naming, folder structures, and data organization can create difficulties for the long-term usability of often expensive and hard to acquire data sets. It can mean that complex data sets require time-consuming reorganization to be usable in existing analysis pipelines expecting an alternate organization. It also poses the risk of knowledge loss when the person who collected/organized the data is no longer available to provide (or no longer remembers!) answers to questions about ambiguously or confusingly documented data. In general, the lack of a consensus around how to structure neuroimaging data can impede rapid dissemination and analysis, lead to time wasted on repeated data curation tasks, and risk the long-term integrity of valuable brain imaging data. 
+
+The <u>B</u>rain <u>I</u>maging <u>D</u>ata <u>S</u>tructure (BIDS) specification was created as a method of organizing brain imaging data according to a set of common principles and conventions. It was first described in 2016 and produced to address the common problem of idiosyncratic data organization and documentation [[13]](#13).  Although there had been several attempts before to create a data structure specification none had acheived widespread adoption [[13]](#13). The BIDS specification however was created by the same research group that developed OpenNeuro (originally called OpenfMRI [[14]](#14)) [[15]](#15), and it is perhaps unsurprising that it was adopted as the organizational standard of the platform. OpenNeuro has become a convenient and popular service for disseminating neuroimaging datasets, helping to pave the way for BIDS to emerge as the new standard for data organization.
+
+BIDS supports a number of different data modalaties (*e.g.* functional and structural MRI, EEG, MEG, Genetic Information *etc.*) and there are a number of actively developing proposals to extend BIDS to support the curation of additional types of information [[16]](#16). Currently, BIDS benefits from an active community driven development model [[16]](#16) and a diverse ecosystem of BIDS-aware analysis pipelines[[17]](#17).
+
+[https://bids-specification.readthedocs.io/en/stable](https://bids-specification.readthedocs.io/en/stable) defines the BIDS specification and we highly recommend users familiarize themselves with this resource before continuing in the conversion process. 
+
 
 ### Footnotes
 1. *Note that imaging facilities may use fiducial markers to reduce the potential for left-right errors. These markers, such as a vitamin E capsule taped to one side of the head, will display as a bright mark in the image. It is good practice to be aware of your imaging center's policy for fiduciary marking and to document any marker placement used for your data.*
@@ -27,9 +34,9 @@ TK
    + *Coordinate systems and affines ([LINK](https://nipy.org/nibabel/coordinate_systems.html))*
    + *Radiological vs neurological conventions ([LINK](https://nipy.org/neuro_radio_conventions.html))*
 
-3. *The details of the NIfTI format were produced by the Data Format Working Group, a group existing within the larger NIfTI organizational body [[7]](#7).*
+3. *The details of the NIfTI format were produced by the Data Format Working Group, existing within the larger NIfTI organizational body [[7]](#7).*
 
-4. *Although some neuroimaging tools support working directly with gzipped NIfTI others do not and files must be unzipped prior to use.*
+4. *Although some neuroimaging tools support working directly with gzipped NIfTI, others do not and files must be unzipped prior to use.*
 
 ## Software Setup
 TK
@@ -121,3 +128,18 @@ Reynolds, R. (2020, April 27). *NIfTI-2 Data Format - Neuroimaging Informatics T
 
 <a id="12">[12]</a>
 *Common Principles -- Imaging files*. Brain Imaging Data Structure v1.6.0. (2021, April 22). Retrieved November 28, 2021, from https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#imaging-files.
+
+<a id="13">[13]</a>
+Gorgolewski, K. J., Auer, T., Calhoun, V. D., Craddock, R. C., Das, S., Duff, E. P., ... & Poldrack, R. A. (2016). The brain imaging data structure, a format for organizing and describing outputs of neuroimgaing experiments. *Scientific data*, *3*(1), 1-9.
+
+<a id="14">[14]</a>
+*OpenfMRI becomes OpenNeuro*. Stanford Center for Reproducible Neuroscience RSS. (2018, February 14). Retrieved November 28, 2021, from https://reproducibility.stanford.edu/openfmri-becomes-openneuro.
+
+<a id="15">[15]</a>
+Poldrack, R. A., Barch, D. M., Mitchell, J., Wager, T., Wagner, A. D., Devlin, J. T., ... & Milham, M. (2013). Toward open sharing of task-based fMRI data: The OpenfMRI project. *Frontiers in neuroinformatics*, *7*, 12.
+
+<a id="16">[16]</a>
+*Get involved in making BIDS better*. Brain Imaging Data Structure. (2021, November 24). Retrieved November 29, 2021, from https://bids.neuroimaging.io/get_involved.html.
+
+<a id="17">[17]</a>
+Gorgolewski, C. (n.d.). BIDS Apps. Retrieved November 29, 2021, from http://bids-apps.neuroimaging.io.
