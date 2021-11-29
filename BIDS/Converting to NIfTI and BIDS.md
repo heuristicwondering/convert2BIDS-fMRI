@@ -65,18 +65,18 @@ TK
 
   Name					      Type		Modality (this will be the output file name)
 
-  AAHead_Scout_64ch_head_coil   	      anat	      
+  AAHead_Scout_64ch_head_coil   	         anat	       HeadScout
   t1_mprage_sag_p2_iso                    anat         T1w      
-  fMRIFieldMap_AP                         anat  
-  fmriFieldMap_PA                         anat
+  fMRIFieldMap_AP                         anat         FieldMap_AP
+  fmriFieldMap_PA                         anat         FieldMap_PA
   Block_1_SET_SBRef                       func         task-socialevaulation_run-01_sbref
   Block_1_SET                             func         task-socialevaulation_run-01_bold
   Block_1_RESTING_STATE_SBRef             func         task-resting_run-01_sbref
   Block_1_RESTING_STATE                   func         task-resting_run-01_bold
   Block1_EGNG_SBRef                       func         tasl-egonogo_run-01_sbref
   Block1_EGNG                             func         tasl-egonogo_run-01_bold
-  AX                                      anat
-  COR                                     anat
+  AX                                      anat         AX
+  COR                                     anat         CORT
 
 *If there are two runs of the same task, check the scan notes to see if the task was repeated. If so change "run-01" to "run-02" for the second run of the task.
 
