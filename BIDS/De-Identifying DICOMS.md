@@ -56,7 +56,7 @@ The following instructions assume the data you have collected (which we will ref
 ```
 
 ### Anonymizing
-1. To start, create a temporary folder called `anondcm` in the same directory that your source folder lives in. In the `anondcm` folder, create any subfolders that further organize the subject folders such as session or site. So now your file hierarchy should look like:
+1. To start, create a temporary folder called `anondcm` in the same directory that your source data folder lives in. In the `anondcm` folder, create any subfolders that further organize the subject folders such as session or site. So now your file hierarchy should look like:
 
 ```
    studyname

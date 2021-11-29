@@ -50,23 +50,29 @@ Previously, we described our [assumption](./De-Identifying%20DICOMS.md#instructi
 We recognize that MATLAB is proprietary software and not all individuals will have access to the resources needed to acquire it. In this regard there are a number of other similar conversion tools in existence (see [https://bids.neuroimaging.io/benefits.html#converters](https://bids.neuroimaging.io/benefits.html#converters) for a list of other BIDS conversion tools). *Please consider contributing alternate instructions for this step if you have any experience with any of these other tools!*
 
 ### dicm2nii
-[dicm2nii](https://github.com/xiangruili/dicm2nii/blob/master/dicm2nii.m) is a collection of tools used to both convert DICOM files to NIfTI and to reorganize them into a BIDS style hierarchy (as well as do some other useful tasks). Additional information will need to be added at later steps to fully bring the data into BIDS compliance, but this does a lot of the initial heavy lifting.
+[dicm2nii](https://github.com/xiangruili/dicm2nii) is a collection of tools used to both convert DICOM files to NIfTI and to reorganize them into a BIDS style hierarchy (as well as do some other useful tasks). Additional information will need to be added at later steps to fully bring the data into BIDS compliance, but this does a lot of the initial heavy lifting.
 
-To use the dicm2nii tools, download the code from either the MathWorks File Exchange ([LINK](https://mathworks.com/matlabcentral/fileexchange/42997-xiangruili-dicm2nii)) or the directly from its GitHub repository ([LINK](https://github.com/xiangruili/dicm2nii) -- you can do this by clicking on the green *Code* button >> *Download ZIP*). To use the tools, unzip them and move them to your project directory.
-
-
+To use the dicm2nii tools, download the code from either the MathWorks File Exchange ([LINK](https://mathworks.com/matlabcentral/fileexchange/42997-xiangruili-dicm2nii)) or the directly from its GitHub repository ([LINK](https://github.com/xiangruili/dicm2nii) -- you can do this by clicking on the green button called *Code* >> *Download ZIP*). To use the tools, unzip them and move them to your project directory by typing in the command line:
+```shell
+unzip /path/to/downloaded/dicm2nii-master.zip -d /path/to/studyname/projects/convert2BIDS/
+```
 
 ## Instructions
+1. To open MATLAB, open a terminal and type `matlab`. In MATLAB, navigate to the folder containing the dicm2nii tools by either *Current Folder* window or by typing `cd /path/to/studyname/projects/convert2BIDS/dicm2nii-master` in the *Command Window*.
 
-1. To open matlab, type "matlab" in home terminal. 
+<p align="center" width="100%">
+    <img width="100%" src="../docs/images/dcm2nii-and-bids-restructuring/navigating-matlab.jpg">
+</p>
+
+3. 
       Once in matlab, using the terminal at the bottom of the window, enter the information below to run dicm2nii converter:
       cd SNAP/Projects/BIDs-Conversion/jillian/dicm2nii-master
       dicm2nii
 
-2. Select the participant's anonymized dicom files ~/STEP/Data/Files from Lab Network Share/AnonDcm/
-3. Select output directory: ~/STEP/Data/BIDS/Raw Data/
+4. Select the participant's anonymized dicom files ~/STEP/Data/Files from Lab Network Share/AnonDcm/
+5. Select output directory: ~/STEP/Data/BIDS/Raw Data/
 
-4. Check presets:
+6. Check presets:
       Output format: BIDS
     Ensure the following are checked:
       Compress
@@ -76,9 +82,9 @@ To use the dicm2nii tools, download the code from either the MathWorks File Exch
       Use SeriesInstanceUID if exists
       Save json file
 
-5. Click “Start conversion”
+7. Click “Start conversion”
 
-6. Check that the following fields are correct:
+8. Check that the following fields are correct:
   Subject: XXXXX (only five-digit participant #)
   Session: Blank
   AcquisitionDate: NaT
