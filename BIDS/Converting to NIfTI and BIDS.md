@@ -93,13 +93,13 @@ unzip /path/to/downloaded/dicm2nii-master.zip -d /path/to/studyname/projects/con
 
   Name					                     Type		    Modality (this will be the output file name)
 
-  AAHead_Scout_64ch_head_coil   	         anat	       HeadScout
+  AAHead_Scout_64ch_head_coil   	         skip	       
   
   t1_mprage_sag_p2_iso                    anat         T1w 
   
-  fMRIFieldMap_AP                         anat         FieldMap_AP
+  fMRIFieldMap_AP                         fmap         dir-AP_run-01_epi
   
-  fmriFieldMap_PA                         anat         FieldMap_PA
+  fmriFieldMap_PA                         fmap         dir-PA_run-01_epi
   
   Block_1_SET_SBRef                       func         task-socialevaulation_run-01_sbref
   
@@ -113,9 +113,9 @@ unzip /path/to/downloaded/dicm2nii-master.zip -d /path/to/studyname/projects/con
   
   Block1_EGNG                             func         tasl-egonogo_run-01_bold
   
-  AX                                      anat         AX
+  AX                                      skip
   
-  COR                                     anat         CORT
+  COR                                     skip
 
 *If there are two runs of the same task, check the scan notes to see if the task was repeated. If so change "run-01" to "run-02" for the second run of the task.
 
