@@ -56,18 +56,27 @@ The following instructions assume the data you have collected (which we will ref
 ```
 
 ### Anonymizing
-1. To start, create a file called AnonDcm in the same directory that your source folder lives in. In the AnonDcm folder, create any subfolders that further organize the subject folders such as session or site.
+1. To start, create a temporary folder called `anondcm` in the same directory that your source folder lives in. In the `anondcm` folder, create any subfolders that further organize the subject folders such as session or site. So now your file hierarchy should look like:
 
-2. Copy the subject level folder and its contents to the corresponding place in the AnonDcm folder.
+```
+   studyname
+        |-------- data
+        |           |-------- sourcedata
+        |           |-------- anondcm
+        |
+        |-------- projects
+```
+
+3. Copy the subject level folder and its contents to the corresponding place in the `anondcm` folder.
    + We recommend copying rather than anonymizing the data in place because if you make a mistake, it's easy to start over.
    
-3. Open DicomBrowser by typing `DicomBrowser` in the terminal.
+4. Open DicomBrowser by typing `DicomBrowser` in the terminal.
 
-4. In the top menu bar, click on '*File*' >> '*Open*', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser will search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
+5. In the top menu bar, click on '*File*' >> '*Open*', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser will search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
    + Depending on the amount of data and computational resources available, this may cause DicomBrowser to hang. If you find this, try loading fewer DICOMs at once, such as going by individual runs.
    + Conversely, if you have adequate computational resources, you can load several participants at once. Use Ctrl+click to select
    
-5. In the left pane, click on the folder that says 'Patient \<ID>'. 
+6. In the left pane, click on the folder that says 'Patient \<ID>'. 
    + This will select all DICOM files that were found with that value in the Patient ID (0010, 0020) tag. If multiple Patient IDs were found (such as if you were anonymizing multiple subjects at once), then they would appear as separate folders in the left panel.
 
 <p align="center" width="100%">
