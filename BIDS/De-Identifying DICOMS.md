@@ -181,6 +181,11 @@ Wikimedia Foundation. (2021, November 20). *ISO 8601*. Wikipedia. Retrieved Nove
 
 * * *
 <p align="center">
-:running: :running: :running: **[Now On to the Next Step!](./Converting%20to%20NIfTI%20and%20BIDS.md)** :running: :running: :running:
+:running: :running: :running: :running: :running: :running:
+
+[Now On to the Next Step!](./Converting%20to%20NIfTI%20and%20BIDS.md) 
+
+:running: :running: :running: :running: :running: :running:
 </p>
+
 * * *
