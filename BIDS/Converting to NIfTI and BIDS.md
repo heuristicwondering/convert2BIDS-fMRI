@@ -54,8 +54,7 @@ unzip /path/to/downloaded/dicm2nii-master.zip -d /path/to/studyname/projects/con
 
 We recommend looking at the description provided in the top lines of the dicm2nii.m file as this provides useful information about how dicm2nii will behave. You can read it by clicking on the file listed at GitHub.
 
-## Instructions
-### Things to Know When Using dicm2nii
+#### Things to Know When Using dicm2nii
 :warning: Before starting, be aware that the dicm2nii converter:
   + Does not care about the file hierarchy you created. Instead, it uses the DICOM header data to infer where to put and what to name generated NIfTI files.
   + dicm2nii will save a `dcmHeaders.mat` file into the ouput directory. This stores header information from the DICOMs. Much of this information however will be stored in the generated BIDS metadata and is not needed in the final BIDS structure.
@@ -63,12 +62,34 @@ We recommend looking at the description provided in the top lines of the dicm2ni
        1. If it finds multiple values in the 'PatientName' tag, it will attempt to sort scans into folders named with the 'PatientName', but since everyone should already be renamed to 'anonymous', all scans will be but into a single folder.
        2. When running with BIDS conversion (*i.e.* converting to *.nii* and generating metadata) dicm2nii uses the 'SeriesDescription' tag to match names created from user input (more on that below) to specific runs. If there are runs with the same series description with the same patient name, data will be quietly overwritten!
          + When converting only to *.nii* (*i.e.* not also generating BIDS metadata), the 'SeriesNumber' tag will be also be appended to try to make file names unique. Again, if this does not result in unique files names, runs will be overwritten. For participants whose scans were conducted in a standard order (as is typical in neuroimaging) it is highly likely that a given run will have the same series number across participants.
-  + If your study design has 2 runs with the same 'SeriesDescription' tag -- which could possibly be the case if you had 2 scans using the same tasks, then we recommend converting data run-by-run rather than by subject to avoid unintended overwriting (see point 2 above). Remember, you can always use the DicomBrower described in the [previous step](./De-Identifying%20DICOMS.md) to verify this. We recommend using a temporary output folder and renaming files with the BIDS `run-<index>` and/or `acq-<label>` [convention](https://bids-specification.readthedocs.io/en/stable/99-appendices/09-entities.html) before moving into the new file hierarchy.
+  + If your study design has 2 runs with the same 'SeriesDescription' tag -- which could possibly be the case if you had 2 scans using the same tasks, then we recommend converting data run-by-run rather than by subject to avoid unintended overwriting (see point 2 above). Remember, you can always use the DicomBrower described in the [previous step](./De-Identifying%20DICOMS.md) to verify this. We recommend using a temporary output folder and renaming *.nii* and metadata files with the BIDS `run-<index>` and/or `acq-<label>` [convention](https://bids-specification.readthedocs.io/en/stable/99-appendices/09-entities.html) before moving into the new file hierarchy.
+
+## Instructions
 
 1. Create a folder called `rawdata` under the study's `data` folder. 
 
-2. This is now where you may need to do a bit of reorganization to your file hierarchy if you are working with multi-session or multi-site studies. If you have determined that your data needs to be reorganized, read the BIDS specification for [Longitudinal and multi-site studies](https://bids-specification.readthedocs.io/en/stable/06-longitudinal-and-multi-site-studies.html) *before* proceeding.
+2. This is now where you may need to do a bit of reorganization to your file hierarchy if you are working with multi-session or multi-site studies. If you have determined that your data needs to be reorganized, read the BIDS specification for [Longitudinal and multi-site studies](https://bids-specification.readthedocs.io/en/stable/06-longitudinal-and-multi-site-studies.html) *before* proceeding. Your new `rawdata` folder may now look something like this:
 
+```
+    rawdata
+        |-------- subject-1
+        |           |-------- session-1
+        |           |-------- session-2
+        |
+        |-------- subject-1
+        |           |-------- session-1
+        .
+        .
+        .       
+```
+
+Notice the difference from the source data example given in the [previous step](./De-Identifying%20DICOMS.md). Sessions are now grouped underneath subjects. You do not need to worry about adding folders for scans at this point, as dcm2nii will create these during the conversion process.
+
+3. Decide at this point whether you want to convert subject-by-subject or scan-by-scan. See the [warnings above](#things-to-know-when-using-dicm2nii) about how dicm2nii behaves before deciding what will work for your data. 
+   + When in doubt, convert scan-by-scan into a temporary folder, rename as needed, and move into the right spot in your raw data folder.
+
+
+*NTS: left off here.*
 4. To open MATLAB, open a terminal and type `matlab`. In MATLAB, navigate to the folder containing the dicm2nii tools by either *Current Folder* window or by typing `cd /path/to/studyname/projects/convert2BIDS/dicm2nii-master` in the *Command Window*.
 
 <p align="center" width="100%">
@@ -184,3 +205,9 @@ Poldrack, R. A., Barch, D. M., Mitchell, J., Wager, T., Wagner, A. D., Devlin, J
 
 <a id="17">[17]</a>
 Gorgolewski, C. (n.d.). BIDS Apps. Retrieved November 29, 2021, from http://bids-apps.neuroimaging.io.
+
+* * *
+:stop_sign: :stop_sign: :stop_sign: **[Wait! Go back to the Last Step!](./De-Identifying%20DICOMS.md)** :stop_sign: :stop_sign: :stop_sign:
+
+:running: :running: :running: **[Now On to the Next Step!](./Defacing.md)** :running: :running: :running:
+* * *
