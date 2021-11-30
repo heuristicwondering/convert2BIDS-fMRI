@@ -38,7 +38,7 @@ Replacing the path with the path and filename of the deb file you downloaded. Af
 Although it is possible to use the browser to create scripts to anonymize all dicoms at once, here we describe the interactive method of anonymization.
 
 ## Instructions
-The following instructions assume the data you have collected (which we will refer to as source data) are grouped by participants with dicoms for individual scans grouped into sub-folders. Subjects may or may not be grouped into further hierarchies such as session, scan site, or cohort as appropriate. So your source data should look something like the following:
+The following instructions assume the data you have collected (which we will refer to as source data) are grouped by participants with dicoms for individual scans grouped into sub-folders. Subjects may or may not be grouped into further hierarchies such as session, scan site, or cohort and later steps will address how to best reorganize these. So, for example, your source data *might* look something like the following:
 
 ```
     sourcedata

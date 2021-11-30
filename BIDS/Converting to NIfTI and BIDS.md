@@ -58,21 +58,21 @@ unzip /path/to/downloaded/dicm2nii-master.zip -d /path/to/studyname/projects/con
 ```
 
 ## Instructions
-1. To open MATLAB, open a terminal and type `matlab`. In MATLAB, navigate to the folder containing the dicm2nii tools by either *Current Folder* window or by typing `cd /path/to/studyname/projects/convert2BIDS/dicm2nii-master` in the *Command Window*.
+1. Create a folder called `rawdata` under the study's `data` folder. This is now where you may need to do a bit of reorganization to your file heirarchy if you are working with multi-session or multi-site studies. 
+
+2. To open MATLAB, open a terminal and type `matlab`. In MATLAB, navigate to the folder containing the dicm2nii tools by either *Current Folder* window or by typing `cd /path/to/studyname/projects/convert2BIDS/dicm2nii-master` in the *Command Window*.
 
 <p align="center" width="100%">
     <img width="100%" src="../docs/images/dcm2nii-and-bids-restructuring/navigating-matlab.jpg">
 </p>
 
-3. 
-      Once in matlab, using the terminal at the bottom of the window, enter the information below to run dicm2nii converter:
-      cd SNAP/Projects/BIDs-Conversion/jillian/dicm2nii-master
-      dicm2nii
+2. Run the dicm2nii tool by typing `dicm2nii` in the MATLAB command window. This will open the DICOM to NIfTI converter window.
 
-4. Select the participant's anonymized dicom files ~/STEP/Data/Files from Lab Network Share/AnonDcm/
-5. Select output directory: ~/STEP/Data/BIDS/Raw Data/
+3. Select the participant's anonymized DICOM files by clicking on the *DICOM folder* button and navigating into the `anondcm` folder created previously in `/path/to/studyname/data/anondcm/`.
 
-6. Check presets:
+4. Select output directory: ~/STEP/Data/BIDS/Raw Data/
+
+5. Check presets:
       Output format: BIDS
     Ensure the following are checked:
       Compress
@@ -82,9 +82,9 @@ unzip /path/to/downloaded/dicm2nii-master.zip -d /path/to/studyname/projects/con
       Use SeriesInstanceUID if exists
       Save json file
 
-7. Click “Start conversion”
+6. Click “Start conversion”
 
-8. Check that the following fields are correct:
+7. Check that the following fields are correct:
   Subject: XXXXX (only five-digit participant #)
   Session: Blank
   AcquisitionDate: NaT
