@@ -74,7 +74,7 @@ The following instructions assume the data you have collected (which we will ref
 
 5. In the top menu bar, click on '*File*' >> '*Open*', navigate to the folder you intend to anonymize. You can select the entire participant folder and DicomBrowser will search through all subfolders, loading any DICOM files it finds. This allows you to anonymize data for all of a participant's scans at once. 
    + Depending on the amount of data and computational resources available, this may cause DicomBrowser to hang. If you find this, try loading fewer DICOMs at once, such as going by individual runs.
-   + Conversely, if you have adequate computational resources, you can load several participants at once. Use Ctrl+click to select
+   + Conversely, if you have adequate computational resources, you can load several participants at once. Use Ctrl+click to select multiple participant folders to anonymize.
    
 6. In the left pane, click on the folder that says 'Patient \<ID>'. 
    + This will select all DICOM files that were found with that value in the Patient ID (0010, 0020) tag. If multiple Patient IDs were found (such as if you were anonymizing multiple subjects at once), then they would appear as separate folders in the left panel.
@@ -110,6 +110,10 @@ The following instructions assume the data you have collected (which we will ref
 
 9. Click on the value field for **(0008, 0022)** "Acquisition Date". Change this to today's date YYYYMMDD.
    + Note that this date format (year, month, day) is preferred because it is compliant with the ISO 8601 international standard for communication of dates. [[5]](#5)[[6]](#6).
+   + The "Acquisition Date" field cannot be changed to "Anonymous" because some software tools require this field to be a valid date.
+   + Today's Date: There are two instances that we're aware of where you might not want to use today's date.
+     1. If you are anonymizing data immediately after the scan is acquired, you will want to choose another fake date.
+     2. If you are acquiring MRI data from participants over multiple sessions, you will want to choose fake dates that represent sessions 1, 2, *etc.*, as many downstream software will identify session numbers by date.
 
 10. In the top menu bar, click on '*File*' >> '*Save...*'. This will pop up a new window with options for saving. Open the topmost drop-down menu and select '*Overwrite existing files*'. 
     + If anonymizing multiple subjects at once, make sure that '*Write all loaded files*' is selected in the bottom drop down menu. If only working with one participant, then the default '*Write only selected files*' should work fine.
