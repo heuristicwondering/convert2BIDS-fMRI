@@ -113,7 +113,7 @@ The following instructions assume the data you have collected (which we will ref
    + The "Acquisition Date" field cannot be changed to "Anonymous" because some software tools require this field to be a valid date.
    + Today's Date: There are two instances that we're aware of where you might not want to use today's date.
      1. If you are anonymizing data immediately after the scan is acquired, you will want to choose another fake date.
-     2. If you are acquiring MRI data from participants over multiple sessions, you will want to choose fake dates that represent sessions 1, 2, *etc.*, as many downstream software will identify session numbers by date.
+     2. If you are acquiring MRI data from participants over multiple sessions, you will want to choose fake dates that represent sessions 1, 2, *etc.*, as many downstream softwares will identify session numbers by date.
 
 10. In the top menu bar, click on '*File*' >> '*Save...*'. This will pop up a new window with options for saving. Open the topmost drop-down menu and select '*Overwrite existing files*'. 
     + If anonymizing multiple subjects at once, make sure that '*Write all loaded files*' is selected in the bottom drop down menu. If only working with one participant, then the default '*Write only selected files*' should work fine.

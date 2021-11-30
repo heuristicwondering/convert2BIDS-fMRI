@@ -16,13 +16,13 @@ To address the shortcomings of the ANALYZE format, the U.S. National Institutes 
 NIfTI allows data to be stored as either a *.hdr*/*.img* file pair (originally for backwards compatability with non-NIfTI aware software) or as a single *.nii* file [[8]](#8)[[9]](#9). Similar to ANALYZE, NIfTI files can store a series of brain images either as multiple files each containing a single 3D brain volume, or as a single large file in which time is represented along a fourth dimension. The BIDS specification (discussed below) additionally recommends compressing NIfTI files using gzip (thus files with the *.nii.gz* file extension represent one or more compressed *.nii* files<sup>[4](#footnotes)</sup>) [[12]](#12) and are an increasingly common approach to managing the large amounts of data produced by neuroimaging experiments.
 
 ### The BIDS Specification
-Heterogeneity in neuroimaging file naming, folder structures, and data organization can create difficulties for the long-term usability of often expensive and hard to acquire data. It can mean that complex data require time-consuming reorganization to be usable in existing analysis pipelines expecting an alternate organization. It also poses the risk of knowledge loss when the person who collected/organized the data is no longer available to provide (or no longer remembers!) answers to questions about ambiguously or confusingly documented data. In general, the lack of a consensus around how to structure neuroimaging data can impede rapid dissemination and analysis, lead to time wasted on repeated data curation tasks, and risk the long-term integrity of valuable brain imaging data. 
+Heterogeneity in neuroimaging file naming, folder structures, and data organization can create difficulties for the long-term usability of often expensive and hard to acquire data. It can mean that complex data requires time-consuming reorganization to be usable in existing analysis pipelines expecting an alternate organization. It also poses the risk of knowledge loss when the person who collected/organized the data is no longer available to provide (or no longer remembers!) answers to questions about ambiguously or confusingly documented data. In general, the lack of a consensus around how to structure neuroimaging data can impede rapid dissemination and analysis, lead to time wasted on repeated data curation tasks, and risk the long-term integrity of valuable brain imaging data. 
 
 The <u>B</u>rain <u>I</u>maging <u>D</u>ata <u>S</u>tructure (BIDS) specification was created as a method of organizing brain imaging data according to a set of common principles and conventions. It was first described in 2016 and produced to address the common problem of idiosyncratic data organization and documentation [[13]](#13).  Although there had been several attempts before to create a data structure specification, none had acheived widespread adoption [[13]](#13). The BIDS specification however was created by the same research group that developed OpenNeuro (originally called OpenfMRI [[14]](#14)) [[15]](#15), and it is perhaps unsurprising that it was adopted as the organizational standard of the platform. OpenNeuro has become a convenient and popular service for disseminating neuroimaging datasets, helping to pave the way for BIDS to emerge as the new standard for data organization.
 
 BIDS supports a number of different data modalaties (*e.g.* functional and structural MRI, EEG, MEG, Genetic Information *etc.*) and there are a number of actively developing proposals to extend BIDS to support the curation of additional types of information [[16]](#16). Currently, BIDS benefits from an active community driven development model [[16]](#16) and a diverse ecosystem of BIDS-aware analysis pipelines [[17]](#17).
 
-[https://bids-specification.readthedocs.io/en/stable](https://bids-specification.readthedocs.io/en/stable) defines the BIDS specification and we highly recommend users familiarize themselves with this resource before continuing in the conversion process. 
+**[https://bids-specification.readthedocs.io/en/stable](https://bids-specification.readthedocs.io/en/stable) defines the BIDS specification and we highly recommend users familiarize themselves with this resource before continuing in the conversion process.**
 
 
 ### Footnotes
@@ -39,28 +39,41 @@ BIDS supports a number of different data modalaties (*e.g.* functional and struc
 4. *Although some neuroimaging tools support working directly with gzipped NIfTI, others do not and files must be unzipped prior to use.*
 
 ## Software Setup
-Previously, we described our [assumption](./De-Identifying%20DICOMS.md#instructions) about the organization of your source data (the dicoms collected from the scanner). We also assume that any code or software
-
-
-
-
 ### MATLAB
 [MATLAB](https://www.mathworks.com/products/matlab.html) is needed to run the dicom conversion tool described below. The conversion tool was created with MATLAB R2017a and examples here are provided with R2019a, however it is listed in the MathWorks file exchange as compatible with any MATLAB release.
 
 We recognize that MATLAB is proprietary software and not all individuals will have access to the resources needed to acquire it. In this regard there are a number of other similar conversion tools in existence (see [https://bids.neuroimaging.io/benefits.html#converters](https://bids.neuroimaging.io/benefits.html#converters) for a list of other BIDS conversion tools). *Please consider contributing alternate instructions for this step if you have any experience with any of these other tools!*
 
 ### dicm2nii
-[dicm2nii](https://github.com/xiangruili/dicm2nii) is a collection of tools used to both convert DICOM files to NIfTI and to reorganize them into a BIDS style hierarchy (as well as do some other useful tasks). Additional information will need to be added at later steps to fully bring the data into BIDS compliance, but this does a lot of the initial heavy lifting.
+[dicm2nii](https://github.com/xiangruili/dicm2nii) is a collection of tools used to both convert DICOM files to NIfTI and to reorganize them into a BIDS style hierarchy (as well as do some other useful tasks) [[1]](#1). Additional information will need to be added at later steps to fully bring the data into BIDS compliance, but this does a lot of the initial heavy lifting.
 
 To use the dicm2nii tools, download the code from either the MathWorks File Exchange ([LINK](https://mathworks.com/matlabcentral/fileexchange/42997-xiangruili-dicm2nii)) or the directly from its GitHub repository ([LINK](https://github.com/xiangruili/dicm2nii) -- you can do this by clicking on the green button called *Code* >> *Download ZIP*). To use the tools, unzip them and move them to your project directory by typing in the command line:
 ```shell
 unzip /path/to/downloaded/dicm2nii-master.zip -d /path/to/studyname/projects/convert2BIDS/
 ```
 
-## Instructions
-1. Create a folder called `rawdata` under the study's `data` folder. This is now where you may need to do a bit of reorganization to your file heirarchy if you are working with multi-session or multi-site studies. 
+We recommend looking at the description provided in the top lines of the dicm2nii.m file as this provides useful information about how dicm2nii will behave. You can read it by clicking on the file listed at GitHub.
 
-2. To open MATLAB, open a terminal and type `matlab`. In MATLAB, navigate to the folder containing the dicm2nii tools by either *Current Folder* window or by typing `cd /path/to/studyname/projects/convert2BIDS/dicm2nii-master` in the *Command Window*.
+## Instructions
+### Things to Know When Using dicm2nii
+:warning: Before starting, be aware that the dicm2nii converter:
+  + Does not care about the file hierarchy you created. Instead, it uses the DICOM header data to infer where to put and what to name generated NIfTI files.
+  + The author of dicm2nii highly discourages converting multiple subjects at once (stated in the code comments). Here are some reasons why we agree it wouldn't be a good idea:
+       1. If it finds multiple values in the 'PatientName' tag, it will attempt to sort scans into folders named with the 'PatientName', but since everyone should already be renamed to 'anonymous', all scans will be but into a single folder.
+       2. When running with BIDS conversion (*i.e.* converting to *.nii* and generating metadata) dicm2nii uses the 'SeriesDescription' tag to match names created from user input (more on that below) to specific runs. If there are runs with the same series description with the same patient name, data will be quietly overwritten!
+         + When converting only to *.nii* (*i.e.* not also generating BIDS metadata), the 'SeriesNumber' tag will be also be appended to try to make file names unique. Again, if this does not result in unique files names, runs will be overwritten. For participants whose scans were conducted in a standard order (as is typical in neuroimaging) it is highly likely that a given run will have the same series number across participants.
+     + dicm2nii will save a `dcmHeaders.mat` file into the ouput directory. This stores header information from the DICOMs. Much of this information however will be stored in the generated BIDS metadata and is not needed in the final BIDS structure.
+   
+
+/* If your study design has 2 runs with the same 'SeriesDescription' tag -- which could possibly be the case if you had 2 scans using the same tasks, then we recommend converting data run-by-run rather than by subject to avoid unintended overwriting (see point 2 in the second caveat above). Remember, you can always use the DicomBrower described in the [previous step](./De-Identifying%20DICOMS.md) to verify this. We recommend using a temporary output folder and renaming files with the BIDS `run-<index>` and/or `acq-<label>` [convention](https://bids-specification.readthedocs.io/en/stable/99-appendices/09-entities.html) before moving into the new file hierarchy.
+
+1. Create a folder called `rawdata` under the study's `data` folder. 
+
+2. This is now where you may need to do a bit of reorganization to your file hierarchy if you are working with multi-session or multi-site studies. 
+
+3. If you have determined that your data needs to be reorganized, read the BIDS specification for [Longitudinal and multi-site studies](https://bids-specification.readthedocs.io/en/stable/06-longitudinal-and-multi-site-studies.html) *before* proceeding.
+
+4. To open MATLAB, open a terminal and type `matlab`. In MATLAB, navigate to the folder containing the dicm2nii tools by either *Current Folder* window or by typing `cd /path/to/studyname/projects/convert2BIDS/dicm2nii-master` in the *Command Window*.
 
 <p align="center" width="100%">
     <img width="100%" src="../docs/images/dcm2nii-and-bids-restructuring/navigating-matlab.jpg">
