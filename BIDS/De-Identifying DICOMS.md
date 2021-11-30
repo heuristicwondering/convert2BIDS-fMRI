@@ -177,3 +177,10 @@ International Organization for Standardization. (2019, February 25). ISO 8601-1:
 
 <a id="6">[6]</a>
 Wikimedia Foundation. (2021, November 20). *ISO 8601*. Wikipedia. Retrieved November 22, 2021, from https://en.wikipedia.org/wiki/ISO_8601.
+
+
+* * *
+<p align="center">
+:running: :running: :running: **[Now On to the Next Step!](./Converting%20to%20NIfTI%20and%20BIDS.md)** :running: :running: :running:
+</p>
+* * *
