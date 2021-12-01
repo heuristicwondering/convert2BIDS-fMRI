@@ -62,7 +62,7 @@ We recommend looking at the description provided in the top lines of the dicm2ni
        1. If it finds multiple values in the 'PatientName' tag, it will attempt to sort scans into folders named with the 'PatientName', but since everyone should already be renamed to 'anonymous', all scans will be but into a single folder.
        2. When running with BIDS conversion (*i.e.* converting to *.nii* and generating metadata) dicm2nii uses the 'SeriesDescription' tag to match names created from user input (more on that below) to specific runs. If there are runs with the same series description with the same patient name, data will be quietly overwritten!
          + When converting only to *.nii* (*i.e.* not also generating BIDS metadata), the 'SeriesNumber' tag will be also be appended to try to make file names unique. Again, if this does not result in unique files names, runs will be overwritten. For participants whose scans were conducted in a standard order (as is typical in neuroimaging) it is highly likely that a given run will have the same series number across participants.
-  + If your study design has 2 runs with the same 'SeriesDescription' tag -- which could possibly be the case if you had 2 scans using the same tasks, then we recommend converting data run-by-run rather than by subject to avoid unintended overwriting (see point 2 above). Remember, you can always use the DicomBrower described in the [previous step](./De-Identifying%20DICOMS.md) to verify this. We recommend using a temporary output folder and renaming *.nii* and metadata files with the BIDS `run-<index>` and/or `acq-<label>` [convention](https://bids-specification.readthedocs.io/en/stable/99-appendices/09-entities.html) before moving into the new file hierarchy.
+  + If your study design has 2 runs with the same 'SeriesDescription' tag -- which could possibly be the case if you had 2 scans using the same tasks, then we recommend converting data run-by-run rather than by subject to avoid unintended overwriting (see point 2 above). Remember, you can always use the DicomBrower described in the [previous step](./De-Identifying%20DICOMS.md) to verify this. You may also need to clear stored preferences between conversion of scan types. See step ## for how to do this.
 
 ## Instructions
 
@@ -72,45 +72,53 @@ We recommend looking at the description provided in the top lines of the dicm2ni
 
 ```
     rawdata
-        |-------- subject-1
-        |           |-------- session-1
-        |           |-------- session-2
+        |-------- sub-01
+        |           |-------- ses-01
+        |           |-------- ses-02
         |
-        |-------- subject-1
-        |           |-------- session-1
+        |-------- sub-02
+        |           |-------- ses-01
         .
         .
         .       
 ```
 
-Notice the difference from the source data example given in the [previous step](./De-Identifying%20DICOMS.md). Sessions are now grouped underneath subjects. You do not need to worry about adding folders for scans at this point, as dcm2nii will create these during the conversion process.
+Notice the difference from the source data example given in the [previous step](./De-Identifying%20DICOMS.md). Sessions are now grouped underneath subjects and names changed to be BIDS compliant (underscores changed to hyphens, required key-pair labels). You do not need to worry about adding folders for scans at this point, as dcm2nii will create these during the conversion process.
+    + Occasionally you will find that a scan had to be run again leaving you with two runs for a given scan sequence. If you choose to keep both scans in the BIDSified data, then we suggest the following organization:
+        1. If the scan was rerun in the same session, label scans as `run-1` and `run-2`.
+        2. If the scan was rerun in a different sessions (such as when the participant is asked to come back to complete scans), then organize as separate sessions.
 
 3. Decide at this point whether you want to convert subject-by-subject or scan-by-scan. See the [warnings above](#things-to-know-when-using-dicm2nii) about how dicm2nii behaves before deciding what will work for your data. 
    + When in doubt, convert scan-by-scan into a temporary folder, rename as needed, and move into the right spot in your raw data folder.
-
-
-*NTS: left off here.*
+   
 4. To open MATLAB, open a terminal and type `matlab`. In MATLAB, navigate to the folder containing the dicm2nii tools by either *Current Folder* window or by typing `cd /path/to/studyname/projects/convert2BIDS/dicm2nii-master` in the *Command Window*.
 
 <p align="center" width="100%">
     <img width="100%" src="../docs/images/dcm2nii-and-bids-restructuring/navigating-matlab.jpg">
 </p>
 
-2. Run the dicm2nii tool by typing `dicm2nii` in the MATLAB command window. This will open the DICOM to NIfTI converter window.
+3. Run the dicm2nii tool by typing `dicm2nii` in the MATLAB command window. This will open the DICOM to NIfTI converter window.
 
-3. Select the participant's anonymized DICOM files by clicking on the *DICOM folder* button and navigating into the `anondcm` folder created previously in `/path/to/studyname/data/anondcm/`.
+4. Select the participant's anonymized DICOM files by clicking on the *DICOM folder* button and navigating into the subject folder in the `anondcm` folder created previously in `/path/to/studyname/data/anondcm/`. Just as with DicomBrowser in the previous step, selecting a folder will automatically select all DICOM files in all the sub-folders.
 
-4. Select output directory: ~/STEP/Data/BIDS/Raw Data/
+4. Select output directory by clicking on the *Results folder* and navigating to the raw data folder `/path/to/studyname/data/rawdata/`.
 
-5. Check presets:
-      Output format: BIDS
-    Ensure the following are checked:
-      Compress
-      Left-had storage
-      Store PatientName
-      #Use parfor if needed
-      Use SeriesInstanceUID if exists
-      Save json file
+<p align="center" width="100%">
+    <img width="100%" src="../docs/images/dcm2nii-and-bids-restructuring/dicm2nii.jpg">
+</p>
+
+5. Check the presets:
+      + Output format: BIDS
+      
+   Ensure the following are checked:
+      + Compress
+      + Left-hand storage
+      + Store PatientName
+      + Use parfor if needed
+      + Use SeriesInstanceUID if exists
+      + Save json file
+      
+    *Note that parfor can increase the speed of conversion substantially, but requires installation of the [Parallel Computing Toolbox](https://www.mathworks.com/products/parallel-computing.html).*
 
 6. Click “Start conversion”
 
@@ -208,6 +216,8 @@ Gorgolewski, C. (n.d.). BIDS Apps. Retrieved November 29, 2021, from http://bids
 
 * * *
 :stop_sign: :stop_sign: :stop_sign: **[Wait! Go back to the Last Step!](./De-Identifying%20DICOMS.md)** :stop_sign: :stop_sign: :stop_sign:
+
+* * *
 
 :running: :running: :running: **[Now On to the Next Step!](./Defacing.md)** :running: :running: :running:
 * * *
