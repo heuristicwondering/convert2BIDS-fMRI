@@ -129,34 +129,34 @@ Notice the difference from the source data example given in the [previous step](
   Comment: Blank
 
 
-  Name					                                                    Type		                                    Modality (this will be the output file name)
-
-  + AAHead_Scout_64ch_head_coil   	                                        skip	       
-  
-  + t1_mprage_sag_p2_iso                                                   anat                                         T1w 
-  
-  + fMRIFieldMap_AP                                                        fmap                                        dir-AP_run-01_epi
-  
-  + fmriFieldMap_PA                                                        fmap                                        dir-PA_run-01_epi
-  
-  + Block_1_SET_SBRef                                                      func                                        task-socialevaulation_run-01_sbref
-  
-  + Block_1_SET                                                            func                                        task-socialevaulation_run-01_bold
-  
-  + Block_1_RESTING_STATE_SBRef                                            func                                        task-resting_run-01_sbref
-  
-  + Block_1_RESTING_STATE                                                  func                                        task-resting_run-01_bold
-  
-  + Block1_EGNG_SBRef                                                      func                                        task-egonogo_run-01_sbref
-  
-  + Block1_EGNG                                                            func                                        task-egonogo_run-01_bold
-  
-  + AX                                                                     skip
-  
-  + COR                                                                    skip
-  
-  
-
+ | Name					              |    Type			   |  Modailty          		            |         
+ --------------------------------- |----------------- |--------------------------------------|
+ |                                 |                  |                                      |
+ | AAHead_Scout_64ch_head_coil     |	  skip         |                                      |
+ |                                 |                  |                                      |
+ | t1_mprage_sag_p2_iso            |     anat         |  T1w                                 |   
+ |                                 |                  |                                      |     
+ | fMRIFieldMap_AP                 |     fmap         |  dir-AP_run-01_epi                   |
+ |                                 |                  |                                      |   
+ | fmriFieldMap_PA                 |     fmap         |  dir-PA_run-01_epi                   |   
+ |                                 |                  |                                      |
+ | Block_1_SET_SBRef               |     func         |  task-socialevaulation_run-01_sbref  |      
+ |                                 |                  |                                      |
+ | Block_1_SET                     |     func         |  task-socialevaulation_run-01_bold   |
+ |                                 |                  |                                      |
+ | Block_1_RESTING_STATE_SBRef     |     func         |  task-resting_run-01_sbref           |
+ |                                 |                  |                                      |
+ | Block_1_RESTING_STATE           |     func         |  task-resting_run-01_bold            | 
+ |                                 |                  |                                      |
+ | Block1_EGNG_SBRef               |     func         |  task-egonogo_run-01_sbref           | 
+ |                                 |                  |                                      |
+ | Block1_EGNG                     |     func         |  task-egonogo_run-01_bold            | 
+ |                                 |                  |                                      |    
+ | AX                              |     skip         |                                      | 
+ |                                 |                  |                                      |
+ | COR                             |     skip         |                                      | 
+  		            
+ 
 *If there are two runs of the same task, check the scan notes to see if the task was repeated. If so change "run-01" to "run-02" for the second run of the task.
 
 7. Hit "ok" and let it run.
