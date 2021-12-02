@@ -123,16 +123,16 @@ Notice the difference from the source data example given in the [previous step](
 6. Click “Start conversion”
 
 7. Check that the following fields are correct:
-  Subject: XXXXX (only five-digit participant #)
-  Session: Blank
-  AcquisitionDate: NaT
-  Comment: Blank
+  + Subject: XXXXX (only five-digit participant #)
+  + Session: Blank
+  + AcquisitionDate: NaT
+  + Comment: Blank
 
 
  | Name					              |    Type			   |  Modailty          		            |         
  --------------------------------- |----------------- |--------------------------------------|
  |                                 |                  |                                      |
- | AAHead_Scout_64ch_head_coil     |	  skip         |                                      |
+ | AAHead_Scout_64ch_head_coil     |	  skip         |    skip                              |
  |                                 |                  |                                      |
  | t1_mprage_sag_p2_iso            |     anat         |  T1w                                 |   
  |                                 |                  |                                      |     
@@ -152,9 +152,9 @@ Notice the difference from the source data example given in the [previous step](
  |                                 |                  |                                      |
  | Block1_EGNG                     |     func         |  task-egonogo_run-01_bold            | 
  |                                 |                  |                                      |    
- | AX                              |     skip         |                                      | 
+ | AX                              |     skip         |   skip                               | 
  |                                 |                  |                                      |
- | COR                             |     skip         |                                      | 
+ | COR                             |     skip         |   skip                               | 
   		            
  
 *If there are two runs of the same task, check the scan notes to see if the task was repeated. If so change "run-01" to "run-02" for the second run of the task.
