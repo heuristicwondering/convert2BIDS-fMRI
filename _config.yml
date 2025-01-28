@@ -1,0 +1,6 @@
+title: Convert-2-BIDS
+description: A step-by-step guide to converting an fMRI imaging data set to follow the BIDS standard designed with teaching in mind.
+
+remote_theme: pages-themes/slate@v0.2.0
+plugins:
+- jekyll-remote-theme
