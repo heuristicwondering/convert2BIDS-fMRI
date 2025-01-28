@@ -8,6 +8,8 @@ The intent of the resources you will find here is to compile current tools and k
 
 We provide step-by-step instructions and make minimal assumptions about prior knowledge working with imaging data and the associated tools. Where possible, we provide rationales for decision points in this workflow and explanations of the tools and processes employed.
 
+We recognize that there are many good pipelines currently in development that automate many of the steps described here. Although useful, the intent of this resource is take users through each individual step with as much explanation as possible, so that they can skillfully utilize more automated tools and recognize and respond appropriately when workflows fail.
+
 If you find this work useful, find any errors, or discover outdated information, please consider lending your time and knowledge to creating a more robust resource for the neuroimaging community.
 
 *Note that currently this documentation outlines how to prepare a dataset consisting of one or more functional MRI runs, at least one high resolution structural image, and optional field maps.* If we receive feedback that this documentation is helpful, we may add further documentation for preparing other types of scan data. [So let us know what you think!](../../discussions)
