@@ -1,6 +1,3 @@
-title: Convert-2-BIDS
-description: A step-by-step workflow for converting raw imaging data into anonymized, preprocessed, BIDs-compliant data sets ready for sharing on OpenNeuro.
-
 remote_theme: pages-themes/slate@v0.2.0
 plugins:
   - jekyll-remote-theme
