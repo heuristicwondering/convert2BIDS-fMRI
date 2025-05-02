@@ -1,4 +1,8 @@
-remote_theme: pages-themes/slate@v0.2.0
-plugins:
-  - jekyll-remote-theme
-  - jemoji
+title: Just the Docs Template
+description: A starter template for a Jeykll site using the Just the Docs theme!
+theme: just-the-docs
+
+url: https://heuristicwondering.github.io/convert2BIDS-fMRI/
+
+aux_links:
+  Template Repository: https://github.com/heuristicwondering/convert2BIDS-fMRI
