@@ -1,7 +1,6 @@
 <img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
 
-# Convert2BIDS
-<hr>
+<h1> Convert2BIDS </h1>
 
 **A step-by-step workflow for converting raw imaging data into anonymized, preprocessed, BIDs-compliant data sets ready for sharing on [OpenNeuro](https://openneuro.org/).**
 
