@@ -19,7 +19,8 @@ If you find this work useful, find any errors, or discover outdated information,
 # Getting Started
 Convert2BIDs is divided into **three** major steps. Each of these can be executed independently of each other but often make critical assumptions about the format of the data based on execution of previous steps. It's highly recommended following steps in the order provided. Simply click on each link to be taken to the relevant instruction page.
 
-$${\color{red}Clicking on any of the links below will take you to the documentation pages of this repository}$$
+> [!NOTE]
+> Clicking on any of the links below will take you to the documentation pages of this repository}$$
 
 1. Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. [(LINK)](/docs/BIDS/)
 2. Preproccessing
