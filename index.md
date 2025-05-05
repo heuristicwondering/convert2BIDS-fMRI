@@ -1,3 +1,8 @@
+---
+title: Home
+layout: home
+---
+
 <img align="right" width="200" src="./docs/images/placeholder.png">
 
 # Convert2BIDS
