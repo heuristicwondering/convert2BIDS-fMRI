@@ -10,8 +10,6 @@ aux_links:
 # Makes Aux links open in a new tab.
 aux_links_new_tab: true
 
-logo: ./assets/images/landing/benefit-of-using-BIDS.png
-
 favicon_ico: /assets/images/favicon.svg
 
 callouts:
