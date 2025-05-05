@@ -1,4 +1,4 @@
-<img align="right" width="200" src="../../asset/images/DICOM-anonymization/coronal-mprage.png">
+<img align="right" width="200" src="../../assets/images/DICOM-anonymization/coronal-mprage.png">
 
 # DICOM Anonymization
 Removing identifiable information from the DICOM headers. 
