@@ -12,7 +12,7 @@ aux_links_new_tab: true
 
 logo: ./assets/images/landing/benefit-of-using-BIDS.png
 
-favicon_ico: "/assets/images/favicon.svg
+favicon_ico: /assets/images/favicon.svg
 
 callouts:
   warning:
