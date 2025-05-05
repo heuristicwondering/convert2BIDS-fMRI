@@ -1,10 +1,11 @@
-<img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
-
 <h1> Convert2BIDS </h1>
 
 **A step-by-step workflow for converting raw imaging data into anonymized, preprocessed, BIDs-compliant data sets ready for sharing on [OpenNeuro](https://openneuro.org/).**
 
 ## Why this Exists
+
+<img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
+
 The intent of the resources you will find here is to compile current tools and knowledge on best practices converting raw neuroimaging data into high quality, maintainable, and shareable data sets. Our goal is to lower the barrier to good data keeping practices and increase the number of openly available data sets.
 
 We provide step-by-step instructions and make minimal assumptions about prior knowledge working with imaging data and the associated tools. Where possible, we provide rationales for decision points in this workflow and explanations of the tools and processes employed.
