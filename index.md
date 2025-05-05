@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
 
@@ -10,7 +11,7 @@ layout: home
 
 ## Why this Exists
 
-<img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png">
+<img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
 
 The intent of this resource is to compile current tools and knowledge on best practices converting raw neuroimaging data into high quality, maintainable, and shareable data sets. Our goal is to lower the barrier to good data keeping practices and increase the number of openly available data sets.
 
@@ -20,15 +21,15 @@ We recognize that there are many good pipelines currently in development that au
 
 If you find this work useful, find any errors, or discover outdated information, please consider lending your time and knowledge to creating a more robust resource for the neuroimaging community.
 
-*Currently this documentation outlines how to prepare a dataset consisting of one or more functional MRI runs, at least one high resolution structural image, and optional field maps.** 
+*Currently this documentation outlines how to prepare a dataset consisting of one or more functional MRI runs, at least one high resolution structural image, and optional field maps.* 
 
 If we receive feedback that this documentation is helpful, we may add further documentation for preparing other types of scan data. [So let us know what you think!](../../discussions)
 
 # Getting Started
 Convert2BIDs is divided into **three** major steps. Each of these can be executed independently of each other but often make critical assumptions about the format of the data based on execution of previous steps. It's highly recommended following steps in the order provided. 
 
-Simply click on each link to be taken to the relevant instruction page.
+Simply click on each button to be taken to the relevant instruction page.
 
-1. Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. [(LINK)](/docs/BIDS/){: .btn .btn-purple}
-2. Preproccessing
-3. Additional quality control and documentation for future analysis
+[STEP 1](/docs/BIDS/){: .btn .btn-purple} Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. 
+[STEP 2](/docs/BIDS/){: .btn .btn-blue} Preproccessing
+[STEP 3](/docs/BIDS/){: .btn .btn-green} Additional quality control and documentation for future analysis
