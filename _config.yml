@@ -6,3 +6,7 @@ url: https://heuristicwondering.github.io/convert2BIDS-fMRI/
 
 aux_links:
   Template Repository: https://github.com/heuristicwondering/convert2BIDS-fMRI
+
+logo: ./assets/images/landing/benefit-of-using-BIDS.png
+
+favicon_ico: "/assets/images/favicon.svg
