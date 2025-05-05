@@ -1,3 +1,8 @@
+---
+title: Making the BIDs structure
+nav_order: 2
+---
+
 # Making the BIDs structure
 The instructions and code here provide the steps needed to anonymize your data and reorganize it into the BIDS specification. It comprises the following **five** steps:
 

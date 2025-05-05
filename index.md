@@ -4,8 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-
-# Convert2BIDS
+# Convert-2-BIDS
 
 **A step-by-step workflow for converting raw imaging data into anonymized, preprocessed, BIDs-compliant data sets ready for sharing on [OpenNeuro](https://openneuro.org/).**
 
@@ -30,6 +29,8 @@ Convert2BIDs is divided into **three** major steps. Each of these can be execute
 
 Simply click on each button to be taken to the relevant instruction page.
 
-[STEP 1](/docs/BIDS/){: .btn .btn-purple} Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. 
-[STEP 2](/docs/BIDS/){: .btn .btn-blue} Preproccessing
-[STEP 3](/docs/BIDS/){: .btn .btn-green} Additional quality control and documentation for future analysis
+1. [STEP 1](/docs/BIDS/){: .btn .btn-purple} Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. 
+
+2. [STEP 2](/docs/BIDS/){: .btn .btn-blue} Preproccessing
+
+3. [STEP 3](/docs/BIDS/){: .btn .btn-green} Additional quality control and documentation for future analysis
