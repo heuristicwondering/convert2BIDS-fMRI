@@ -3,8 +3,11 @@ title: Home
 layout: home
 ---
 
-<img align="right" width="200" src="./assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
+
 # Convert2BIDS
+
+<img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
+
 **A step-by-step workflow for converting raw imaging data into anonymized, preprocessed, BIDs-compliant data sets ready for sharing on [OpenNeuro](https://openneuro.org/).**
 
 ## Why this Exists
