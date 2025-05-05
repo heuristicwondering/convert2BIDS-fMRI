@@ -4,7 +4,7 @@
 
 ## Why this Exists
 
-<img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
+<kbd> <img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png"> </kbd>
 
 The intent of the resources you will find here is to compile current tools and knowledge on best practices converting raw neuroimaging data into high quality, maintainable, and shareable data sets. Our goal is to lower the barrier to good data keeping practices and increase the number of openly available data sets.
 
