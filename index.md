@@ -30,12 +30,8 @@ Convert2BIDs is divided into **three** major steps. Each of these can be execute
 
 Simply click on each button to be taken to the relevant instruction page.
 
-<table>
-<tr><td valign="center">[STEP 1](/docs/BIDS/){: .btn .btn-purple}</td>
-	<td valign="center">Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure.</td></tr>
+| [STEP 1](/docs/BIDS/){: .btn .btn-purple} | Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. |
 
-<tr><td valign="center">[STEP 2](/docs/BIDS/){: .btn .btn-blue}</td>
-	<td valign="center">Preproccessing</td></tr>
+| [STEP 2](/docs/BIDS/){: .btn .btn-blue} | Preproccessing |
 
-<tr><td valign="center">[STEP 3](/docs/BIDS/){: .btn .btn-green}</td>
-	<td valign="center">Additional quality control and documentation for future analysis</td></tr>
+| [STEP 3](/docs/BIDS/) | Additional quality control and documentation for future analysis |
