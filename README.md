@@ -11,8 +11,10 @@ The intent of this resource is to compile current tools and knowledge on best pr
 We provide step-by-step instructions and make minimal assumptions about prior knowledge working with imaging data and the associated tools. Where possible, we provide rationales for decisions in this workflow and explanations of the tools and processes employed.
 
 <br>
+
 > [!IMPORTANT]  
 > We recognize that there are many good pipelines currently in development that automate many of the steps described here. Although useful, the intent of this resource is take users through each individual step with as much explanation as possible, so that they can skillfully utilize more automated tools and recognize and respond appropriately when workflows fail.
+
 <br>
 
 If you find this work useful, find any errors, or discover outdated information, please consider lending your time and knowledge to creating a more robust resource for the neuroimaging community.
