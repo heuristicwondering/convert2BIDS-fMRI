@@ -16,8 +16,8 @@ The intent of this resource is to compile current tools and knowledge on best pr
 
 We provide step-by-step instructions and make minimal assumptions about prior knowledge working with imaging data and the associated tools. Where possible, we provide rationales for decisions in this workflow and explanations of the tools and processes employed.
 
-> [!IMPORTANT]  
-> We recognize that there are many good pipelines currently in development that automate many of the steps described here. Although useful, the intent of this resource is take users through each individual step with as much explanation as possible, so that they can skillfully utilize more automated tools and recognize and respond appropriately when workflows fail.
+{: .important }
+We recognize that there are many good pipelines currently in development that automate many of the steps described here. Although useful, the intent of this resource is take users through each individual step with as much explanation as possible, so that they can skillfully utilize more automated tools and recognize and respond appropriately when workflows fail.
 
 If you find this work useful, find any errors, or discover outdated information, please consider lending your time and knowledge to creating a more robust resource for the neuroimaging community.
 
@@ -30,8 +30,12 @@ Convert2BIDs is divided into **three** major steps. Each of these can be execute
 
 Simply click on each button to be taken to the relevant instruction page.
 
-1. [STEP 1](/docs/BIDS/){: .btn .btn-purple} Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. 
+<table>
+<tr><td valign="center">[STEP 1](/docs/BIDS/){: .btn .btn-purple}</td>
+	<td valign="center">Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure.</td></tr>
 
-2. [STEP 2](/docs/BIDS/){: .btn .btn-blue} Preproccessing
+<tr><td valign="center">[STEP 2](/docs/BIDS/){: .btn .btn-blue}</td>
+	<td valign="center">Preproccessing</td></tr>
 
-3. [STEP 3](/docs/BIDS/){: .btn .btn-green} Additional quality control and documentation for future analysis
+<tr><td valign="center">[STEP 3](/docs/BIDS/){: .btn .btn-green}</td>
+	<td valign="center">Additional quality control and documentation for future analysis</td></tr>
