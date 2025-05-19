@@ -16,13 +16,14 @@ The intent of this resource is to compile current tools and knowledge on best pr
 
 We provide step-by-step instructions and make minimal assumptions about prior knowledge working with imaging data and the associated tools. Where possible, we provide rationales for decisions in this workflow and explanations of the tools and processes employed.
 
-We recognize that there are many good pipelines currently in development that automate many of the steps described here. Although useful, the intent of this resource is take users through each individual step with as much explanation as possible, so that they can skillfully utilize more automated tools and recognize and respond appropriately when workflows fail.
+> [!IMPORTANT]  
+> We recognize that there are many good pipelines currently in development that automate many of the steps described here. Although useful, the intent of this resource is take users through each individual step with as much explanation as possible, so that they can skillfully utilize more automated tools and recognize and respond appropriately when workflows fail.
 
 If you find this work useful, find any errors, or discover outdated information, please consider lending your time and knowledge to creating a more robust resource for the neuroimaging community.
 
-*Currently this documentation outlines how to prepare a dataset consisting of one or more functional MRI runs, at least one high resolution structural image, and optional field maps.* 
+***Currently this documentation outlines how to prepare a dataset consisting of one or more functional MRI runs, at least one high resolution structural image, and optional field maps.***
 
-If we receive feedback that this documentation is helpful, we may add further documentation for preparing other types of scan data. [So let us know what you think!](../../discussions)
+If we receive feedback that this documentation is helpful, we may add further documentation for preparing other types of scan data. [So let us know what you think!](https://github.com/heuristicwondering/convert2BIDS-fMRI/discussions)
 
 # Getting Started
 Convert2BIDs is divided into **three** major steps. Each of these can be executed independently of each other but often make critical assumptions about the format of the data based on execution of previous steps. It's highly recommended following steps in the order provided. 
