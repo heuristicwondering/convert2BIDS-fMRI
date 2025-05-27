@@ -10,7 +10,7 @@ nav_order: 1
 
 ## Why this Exists
 
-<img align="right" width="40%" src="./assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
+<img align="right" width="40%" src="../assets/images/landing/benefit-of-using-BIDS.png" style='border:2px solid #000000; margin: 4px'>
 
 The intent of this resource is to compile current tools and knowledge on best practices converting raw neuroimaging data into high quality, maintainable, and shareable data sets. Our goal is to lower the barrier to good data keeping practices and increase the number of openly available data sets.
 
@@ -30,8 +30,8 @@ Convert2BIDs is divided into **three** major steps. Each of these can be execute
 
 Simply click on each button to be taken to the relevant instruction page.
 
-| [STEP 1](/docs/BIDS/){: .btn .btn-purple} | Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. |
-
+| <!-- -->    | <!-- -->    |
+|-------------|-------------|
+| [STEP 1](/STEP-1_file-conversion/Making-the-BIDs-structure.md){: .btn .btn-purple} | Anonymization, conversion from Dicom to Nifti file formats, and conversion to a BIDs file structure. |
 | [STEP 2](/docs/BIDS/){: .btn .btn-blue} | Preproccessing |
-
 | [STEP 3](/docs/BIDS/){: .btn .btn-green} | Additional quality control and documentation for future analysis |
