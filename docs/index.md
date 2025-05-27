@@ -34,4 +34,4 @@ Simply click on each button to be taken to the relevant instruction page.
 
 | [STEP 2](/docs/BIDS/){: .btn .btn-blue} | Preproccessing |
 
-| [STEP 3](/docs/BIDS/) | Additional quality control and documentation for future analysis |
+| [STEP 3](/docs/BIDS/){: .btn .btn-green} | Additional quality control and documentation for future analysis |

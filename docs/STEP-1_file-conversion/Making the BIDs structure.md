@@ -1,5 +1,6 @@
 ---
 title: Making the BIDs structure
+layout: home
 nav_order: 2
 ---
 

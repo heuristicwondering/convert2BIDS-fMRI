@@ -12,7 +12,7 @@ aux_links_new_tab: true
 
 favicon_ico: /assets/images/favicon.svg
 
-callouts_level: loud
+callouts_level: quiet
 callouts:
   highlight:
     color: yellow
